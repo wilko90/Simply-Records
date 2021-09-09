@@ -1,5 +1,11 @@
-{% extends "base.html" %}
-{% load static %}
 
-{% block content %}
+{% extends "base.html"%}
+{% load static %}
+{% block extra_title %}- Home{% endblock %}
+{% block content%}
+
+
+{% include 'home/includes/main_header&button.html' %}
+
+
 {% endblock %}
