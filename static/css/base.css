@@ -30,6 +30,18 @@ body{
     font-size: .9rem;
     height: calc(100vh - 58px);
 }
+.bg-light{
+    background-color: var(--offwhite) !important;
+}
+
+/*Buttons*/
+
+.btn-outline-secondary {
+    color: var(--blackish);
+    border-color: var(--blackish);
+}
+
+.btn-outline-secondary
 
 /* nav bar*/
 
@@ -58,3 +70,4 @@ a:hover{
 .nav-link:focus, .nav-link:hover {
     color: var(--supple);
 }
+
