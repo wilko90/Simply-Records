@@ -1,11 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
+/* Colour and Font Variables */
+:root {
+    --blackish: #2d2d2b;
+    --powder: #f0e4d8;
+    --offwhite: #f6f5f0;
+    --supple: #C39E9E;
+    --fadedpink: #F6F0F1; 
+    --roboto: 'Roboto', serif;
+    }
+/* Global style settings*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body, html{
+    font-family: var(--roboto);
+    min-height: 100vh;
+    width: 100vw;
+}
+
 body{
-    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    color: var(--blackish);
+    font-size: .9rem;
+    height: calc(100vh - 58px);
+}
+
+/* nav bar*/
+
+.nav-bar{
+    background-color: var(--blackish);
+    padding: 1rem;
+}
+
+.nav-bar a{
+    color: var(--fadedpink);
+    transition: ease-in-out color .15s;
+}
+a {
+    text-decoration: none;
+}
+.dropdown-item{
+    background-color: var(--offwhite);
+    color: var(--blackish) !important;
+}
+.dropdown-menu{
+    background-color: var(--offwhite) !important;
+}
+a:hover{
+    color: var(--supple);
+}
+.nav-link:focus, .nav-link:hover {
+    color: var(--supple);
 }
