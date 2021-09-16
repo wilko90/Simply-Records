@@ -29,6 +29,7 @@ body{
     color: var(--blackish);
     font-size: .9rem;
     height: calc(100vh - 58px);
+    background-color: #fff;
 }
 .bg-light{
     background-color: var(--offwhite) !important;
@@ -41,7 +42,9 @@ body{
     border-color: var(--blackish);
 }
 
-.btn-outline-secondary
+.btn-outline-secondary:hover{
+    background-color: var(--supple);
+}
 
 /* nav bar*/
 
@@ -50,7 +53,12 @@ body{
     padding: 1rem;
 }
 
-.nav-bar a{
+.nav-header{
+    background-color: var(--blackish);
+    padding: 1rem;
+}
+
+.nav-header a{
     color: var(--fadedpink);
     transition: ease-in-out color .15s;
 }
