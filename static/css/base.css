@@ -34,6 +34,15 @@ body{
 .bg-light{
     background-color: var(--offwhite) !important;
 }
+.upper-case{
+	text-transform: uppercase;
+}
+a{
+	color: var(--blackish);
+}
+.bold{
+	font-weight: bold;
+}
 
 /*Buttons*/
 
@@ -44,6 +53,16 @@ body{
 
 .btn-outline-secondary:hover{
     background-color: var(--supple);
+}
+.center{
+	text-align: center;
+}
+.sub-title-padding{
+	padding: 20px;
+}
+
+.btn-group, .btn-group-vertical{
+	margin-top: 20px;
 }
 
 /* nav bar*/
@@ -235,7 +254,7 @@ a {
 }
 .owl-controls .owl-prev {
 	position: absolute;
-	left: -40px;
+	left: -10px;
 	bottom: 185px;
 	padding: 8px 17px;
 	background: #c66;
@@ -244,7 +263,7 @@ a {
 }
 .owl-controls .owl-next {
 	position: absolute;
-	right: -40px;
+	right: -10px;
 	bottom: 185px;
 	padding: 8px 17px;
 	background: #c66;
@@ -264,3 +283,13 @@ a {
 	background: #000;
 }
 
+/* Cards*/
+
+.product-details-container{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.card-margin{
+	margin-top: 17px;
+}
