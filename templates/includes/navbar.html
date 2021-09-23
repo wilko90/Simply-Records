@@ -1,10 +1,65 @@
+<div id="delivery-banner" class="row text-center">
+    <div class="col bg-black text-white">
+        <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
+    </div>            
+</div>
 <nav class="sticky-top nav-header">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="#">New Releases</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Back In Stock</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Pre Orders</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Merchandise</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Equipment</a>
+        <li class="nav-item dropdown">
+            <a class="py-2 d-none d-md-inline-block" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                New Releases
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="" class="dropdown-item">By Price</a>
+                <a href="" class="dropdown-item ">By Rating</a>
+                <a href="" class="dropdown-item ">By Genre</a>
+                <a href="" class="dropdown-item">All Products</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="py-2 d-none d-md-inline-block" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Back In Stock
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="" class="dropdown-item">By Price</a>
+                <a href="" class="dropdown-item ">By Rating</a>
+                <a href="" class="dropdown-item ">By Genre</a>
+                <a href="" class="dropdown-item">All Products</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="py-2 d-none d-md-inline-block" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pre Orders
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="" class="dropdown-item">By Price</a>
+                <a href="" class="dropdown-item ">By Rating</a>
+                <a href="" class="dropdown-item ">By Genre</a>
+                <a href="" class="dropdown-item">All Products</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="py-2 d-none d-md-inline-block" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Merchandise
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="" class="dropdown-item">Gift Cards</a>
+                <a href="" class="dropdown-item ">Clothing</a>
+                <a href="" class="dropdown-item ">Slipmats</a>
+                <a href="" class="dropdown-item">Books</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="py-2 d-none d-md-inline-block" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Equipment
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="" class="dropdown-item">Head Phones</a>
+                <a href="" class="dropdown-item">Vinyl Cleaning</a>
+                <a href="" class="dropdown-item">Record Bags</a>
+                <a href="" class="dropdown-item">Cartridges</a>
+            </div>
+        </li>
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">
                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
