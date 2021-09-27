@@ -70,6 +70,9 @@ a{
 .navbar-expand-md .navbar-collapse {
 	justify-content: space-around !important;
 }
+.logo{
+	max-height: 6rem;
+}
 
 .navbar-toggler:focus{
 	box-shadow: none;
@@ -319,7 +322,11 @@ a {
 .card-margin{
 	margin-top: 17px;
 }
-
+/* Footer*/
+.page-footer{
+    top: 100%;
+	padding-top: 0;
+}
 .footer-clean {
 	padding:50px 0;
 	background-color:#fff;
@@ -404,4 +411,4 @@ a {
 	margin-bottom:0;
 	font-size:13px;
 	opacity:0.6;
-  }
+ }
