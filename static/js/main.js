@@ -14,6 +14,6 @@ $(document).ready(function() {
      *  Toggles the searchbar on smaller screens
      */
     $('#search-button').click(function () {
-      $('#search-form-container').slideToggle('slow');
+      $('#search-form-container').slideToggle('fast');
     });
 });
