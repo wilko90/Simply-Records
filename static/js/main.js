@@ -9,4 +9,11 @@ $(document).ready(function() {
         navigationText:["",""],
         autoPlay:true
     });
+    $('#search-form-container').hide();
+    /**
+     *  Toggles the searchbar on smaller screens
+     */
+    $('#search-button').click(function () {
+      $('#search-form-container').slideToggle('slow');
+    });
 });
