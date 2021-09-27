@@ -65,7 +65,11 @@ a{
 	margin-top: 20px;
 }
 
+
 /* nav bar*/
+.navbar-expand-md .navbar-collapse {
+	justify-content: space-around !important;
+}
 
 .nav-bar{
     background-color: var(--blackish);
@@ -75,6 +79,10 @@ a{
 .nav-header{
     background-color: var(--blackish);
     padding: 1rem;
+}
+
+.shipping-banner{
+	background-color: var(--powder);
 }
 
 .nav-header a{
@@ -236,6 +244,9 @@ a {
 	color: #c66;
 	font-size: 14px;
 	font-weight: 700;
+}
+.navbar-toggler{
+	border: var(--powder) !important;
 }
 .product .price span {
 	color: #888;
