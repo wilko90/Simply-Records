@@ -1,23 +1,23 @@
 <nav class="d-flex nav-header navbar-dark navbar navbar-expand-lg static-top">
     <div class="d-flex navbar-expand-md flex-column flex-md-row navbar-collapse">
-        <div class="d-flex me-auto">
+        <div class="d-flex">
             <button class="navbar-toggler px-2" type="button" data-toggle="collapse" data-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!--Logo-->
             <a class="navbar-brand px-2" href="{}">
-                <img src="" alt="logo" class="logo">
+                <img src="/static/img/logo3.png" alt="logo" class="logo">
             </a>
             <!--Search button-->
             <div class="d-flex">
-                <div class="btn px-1 d-block d-lg-none mr-md-3" id="search-button">
+                <div class="btn d-block d-lg-none mr-md-3" id="search-button">
                     <div class="text-center text-white d-flex flex-column justify-content-between">
                         <i class="fas fa-search"></i>
                         <small class="mt-1 small-text-navbar">Search</small>
                     </div>
                 </div>
-                <a href="" class="btn px-1 d-block d-md-none {% if grand_total %}text-warning {% else %}{% endif %}">
+                <a href="" class="btn d-block d-md-none {% if grand_total %}text-warning {% else %}{% endif %}">
                     <div
                         class="text-center d-flex flex-column justify-content-between {% if grand_total %}text-warning {% else %}{% endif %}">
                         <i class="fas fa-shopping-cart"></i>
