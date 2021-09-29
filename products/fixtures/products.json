@@ -1,0 +1,17 @@
+[
+    {
+       "pk":1,
+       "model":"products.product",
+       "fields":{
+          "sku":"SR123456",
+          "name":"SLY & THE FAMILY STONE",
+          "track_list":"",
+          "description":"Best-Of's don't come much better than this: 20 tracks from one of the superlative bands of all time. Sly Stone's gift as producer and ringleader was to mesh the emerging big-band, good-time funk sound of the late 1960s with an unerring sense of melody, structure and message. The result, on early hits like 'Dance To The Music",
+          "price":12.99,
+          "category":5,
+          "rating":4.6,
+          "image_url":"https://i.ibb.co/JF1sqB7/sly-fam-stone.jpg",
+          "image":"img/products/sly-fam-stone.jpeg"
+       }
+    }
+]
