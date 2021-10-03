@@ -331,6 +331,10 @@ a {
 .card-margin{
 	margin-top: 17px;
 }
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
 /* Footer*/
 .footer-clean {
 	padding:50px 0;
@@ -409,7 +413,7 @@ a {
 	.footer-clean .item.social > a {
 	  margin-top:10px;
 	}
-  }
+}
   
   .footer-clean .copyright {
 	margin-top:14px;
@@ -417,3 +421,7 @@ a {
 	font-size:13px;
 	opacity:0.6;
  }
+
+.description-p{
+	margin-top: 20px;
+}
