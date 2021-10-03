@@ -21,6 +21,7 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     label_name = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField()
+    genre = models.CharField(max_length=24, null=True, blank=True)
     format_size = models.DecimalField(max_digits=2, decimal_places=0, null=True, blank=True)
     track_list = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
