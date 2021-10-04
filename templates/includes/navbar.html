@@ -33,10 +33,9 @@
             </div>
         </div>
         <div class="px-1py-1" id="search-form-container">
-            <form method="GET" action="">
+            <form method="GET" action="{% url 'products' %}">
                 <div class="input-group">
-                    <input class="form-control" type="text" name="serach_term_input" placeholder="Search"
-                        aria-label="Search">
+                    <input class="form-control" type="text" name="q" placeholder="Search our site">
                     <div class="input-group-append">
                         <button class="btn button-black border-white rounded-right" type="submit">
                             <i class="fas fa-search text-white"></i>
