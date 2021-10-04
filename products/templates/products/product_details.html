@@ -26,6 +26,12 @@
                     {{ product.genre }}
                 </a>
             </p>
+            <p class="text-salmon">
+                <i class="fas fa-pound-sign"></i>
+                <a href="" class="text-dark font-weight-bold">
+                    {{ product.price }}
+                </a>
+            </p>
             {% if product.rating %}
             <small class=""><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
             {% else %}
@@ -38,116 +44,23 @@
                 </div>
             </div>
         </div>
-        <div id="playlist-wrapper" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 display-block">
-            <div>
-
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <!-- PLAYLIST -->
-                        <a class="btn btn-primary btn-dark single-listenall-button single-listenall single-addplaylist color-white float-right display-block"
-                            href="#" role="button">Play All<svg class="svg-inline--fa fa-play fa-w-14 ml-2"
-                                aria-hidden="true" data-prefix="fas" data-icon="play" role="img"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-                                <path fill="currentColor"
-                                    d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z">
-                                </path>
-                            </svg><!-- <i class="fas fa-play ml-2"></i> --></a>
-                        <a class="btn btn-primary btn-dark color-white single-addplaylist float-right pr-3 pr-sm-3 pr-md-3 pr-lg-3 pr-xl-3 mr-3 mr-sm-3 mr-md-3 mr-lg-3 mr-xl-3"
-                            href="#" role="button">
-                            Add All<svg class="svg-inline--fa fa-plus fa-w-14 ml-2" aria-hidden="true" data-prefix="fas"
-                                data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                                data-fa-i2svg="">
-                                <path fill="currentColor"
-                                    d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
-                                </path>
-                            </svg><!-- <i class="fas fa-plus ml-2"></i> -->
-                        </a>
-
-                        <span class="archive-playlist display-none"><span id="5a41dcb5cb22606daaff083dbff768da"> Return
-                                To Forever Rumble (Fred Ps Journey Intepretation) </span><span
-                                id="5a8c487f072daa84d24e25babcff6180"> Chick Corea La Festiva (Fred P Tribal beats
-                                Intepretation) </span><span id="7d2781de4410972741e9ff4abe464ba3"> Weeather Report
-                                Havona (Fred P Broken Beat interpretation) </span></span>
-                    </div>
-                </div>
-
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <h2>Tracklist:</h2>
+                <table class="playlist">
+                    <tbody>
+                        <tr>
+                            <td width="100%">{{ product.track_list }}</td>
+                        </tr>
+                        <tr>
+                            <td width="100%">{{ product.track_list }}</td>
+                        </tr>
+                        <tr>
+                            <td width="100%">{{ product.track_list }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-
-
-            <table id="playlist" class="top-gap" cellspacing="0" cellpadding="5">
-                <tbody>
-                    <tr>
-                        <td width="2%">1.</td>
-                        <td class="trackname" width="80%"> Return To Forever Rumble (Fred Ps Journey Intepretation)
-                        </td>
-                        <td width="9%" class="center-text"><a class="single-addtrack mx-3"
-                                id="5a41dcb5cb22606daaff083dbff768da" href="#"><svg
-                                    class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas"
-                                    data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                                    data-fa-i2svg="">
-                                    <path fill="currentColor"
-                                        d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
-                                    </path>
-                                </svg><!-- <i class="fas fa-plus"></i> --></a></td>
-                        <td width="9%" class="center-text"><a class="single-playtrack mx-3"
-                                id="5a41dcb5cb22606daaff083dbff768da" href="#"><svg
-                                    class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" data-prefix="fas"
-                                    data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                                    data-fa-i2svg="">
-                                    <path fill="currentColor"
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z">
-                                    </path>
-                                </svg><!-- <i class="fas fa-play"></i> --></a></td>
-                    </tr>
-                    <tr>
-                        <td width="2%">2.</td>
-                        <td class="trackname" width="80%"> Chick Corea La Festiva (Fred P Tribal beats Intepretation)
-                        </td>
-                        <td width="9%" class="center-text"><a class="single-addtrack mx-3"
-                                id="5a8c487f072daa84d24e25babcff6180" href="#"><svg
-                                    class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas"
-                                    data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                                    data-fa-i2svg="">
-                                    <path fill="currentColor"
-                                        d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
-                                    </path>
-                                </svg><!-- <i class="fas fa-plus"></i> --></a></td>
-                        <td width="9%" class="center-text"><a class="single-playtrack mx-3"
-                                id="5a8c487f072daa84d24e25babcff6180" href="#"><svg
-                                    class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" data-prefix="fas"
-                                    data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                                    data-fa-i2svg="">
-                                    <path fill="currentColor"
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z">
-                                    </path>
-                                </svg><!-- <i class="fas fa-play"></i> --></a></td>
-                    </tr>
-                    <tr>
-                        <td width="2%">3.</td>
-                        <td class="trackname" width="80%"> Weeather Report Havona (Fred P Broken Beat interpretation)
-                        </td>
-                        <td width="9%" class="center-text"><a class="single-addtrack mx-3"
-                                id="7d2781de4410972741e9ff4abe464ba3" href="#"><svg
-                                    class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas"
-                                    data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                                    data-fa-i2svg="">
-                                    <path fill="currentColor"
-                                        d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
-                                    </path>
-                                </svg><!-- <i class="fas fa-plus"></i> --></a></td>
-                        <td width="9%" class="center-text"><a class="single-playtrack mx-3"
-                                id="7d2781de4410972741e9ff4abe464ba3" href="#"><svg
-                                    class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" data-prefix="fas"
-                                    data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                                    data-fa-i2svg="">
-                                    <path fill="currentColor"
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z">
-                                    </path>
-                                </svg><!-- <i class="fas fa-play"></i> --></a></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
 </div>
