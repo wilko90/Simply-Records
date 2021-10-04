@@ -425,3 +425,6 @@ a {
 .description-p{
 	margin-top: 20px;
 }
+.playlist{
+	background: var(--supple);
+}
