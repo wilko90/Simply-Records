@@ -52,6 +52,10 @@ a{
 	background:#fff;
 	z-index: -1;
 }
+.hr {
+	width: 50%;
+	margin: 0 auto;
+}
 
 /*Buttons*/
 
@@ -334,6 +338,10 @@ a {
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+.sorting-products{
+	position: absolute;
+	right: 0px;
 }
 /* Footer*/
 .footer-clean {
