@@ -6,8 +6,28 @@
 
 <div class="container-fluid">
     <div class="row">
-        <h1 class="display-6 font-weight-normal center sub-title-padding">All Products</h1>
+        <div class="col-12 center">
+            <h1 class="mt-4 mb-5 font-weight-normal sub-title-padding">Products
+                <hr class=" hr center mt-3">
+            </h1>
+        </div>
+        <div class="justify-content-center">
+            <div class="sorting-products">
+                <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                </select>
+            </div>
+        </div>
     </div>
+
     <div class="row">
         {% for product in products %}
         <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
