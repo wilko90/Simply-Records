@@ -56,7 +56,6 @@ a{
 	width: 50%;
 	margin: 0 auto;
 }
-
 /*Buttons*/
 
 .btn-outline-secondary {
@@ -325,7 +324,7 @@ a {
 	background: #000;
 }
 
-/* Cards*/
+/* Products*/
 
 .product-details-container{
 	white-space: nowrap;
@@ -342,6 +341,11 @@ a {
 .sorting-products{
 	position: absolute;
 	right: 0px;
+}
+.badge{
+	color: var(--blackish) !important;
+	font-weight: 400 !important
+	;
 }
 /* Footer*/
 .footer-clean {
