@@ -17,7 +17,7 @@
                         <small class="mt-1 small-text-navbar">Search</small>
                     </div>
                 </div>
-                <a href="" class="btn d-block d-md-none {% if grand_total %}text-warning {% else %}{% endif %}">
+                <a href="{% url 'view_bag' %}" class="btn d-block d-md-none {% if grand_total %}text-warning {% else %}{% endif %}">
                     <div
                         class="text-center d-flex flex-column justify-content-between {% if grand_total %}text-warning {% else %}{% endif %}">
                         <i class="fas fa-shopping-cart"></i>
@@ -32,6 +32,7 @@
                 </a>
             </div>
         </div>
+        <!--Search form for mobile and tablet-->
         <div class="px-1py-1" id="search-form-container">
             <form method="GET" action="{% url 'products' %}">
                 <div class="input-group">
@@ -52,11 +53,15 @@
                         New Releases
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="new-releases-link">
-                        <a href="{% url 'products' %}?category=new_releases_funk_soul_jazz" class="dropdown-item">Funk Soul &amp; Jazz</a>
-                        <a href="{% url 'products' %}?category=new_releases_electronic" class="dropdown-item ">Electronic</a>
+                        <a href="{% url 'products' %}?category=new_releases_funk_soul_jazz" class="dropdown-item">Funk
+                            Soul &amp; Jazz</a>
+                        <a href="{% url 'products' %}?category=new_releases_electronic"
+                            class="dropdown-item ">Electronic</a>
                         <a href="{% url 'products' %}?category=new_releases_hip_hop" class="dropdown-item ">Hip Hop</a>
-                        <a href="{% url 'products' %}?category=new_releases_rock_indie" class="dropdown-item">Rock &amp; Indie</a>
-                        <a href="{% url 'products' %}?category=new_releases_funk_soul_jazz,new_releases_electronic,new_releases_hip_hop,new_releases_rock_indie," class="dropdown-item">All New Releases</a>
+                        <a href="{% url 'products' %}?category=new_releases_rock_indie" class="dropdown-item">Rock &amp;
+                            Indie</a>
+                        <a href="{% url 'products' %}?category=new_releases_funk_soul_jazz,new_releases_electronic,new_releases_hip_hop,new_releases_rock_indie,"
+                            class="dropdown-item">All New Releases</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -65,11 +70,16 @@
                         Back In Stock
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="back-in-stock-link">
-                        <a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz" class="dropdown-item">Funk Soul &amp; Jazz</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_electronic" class="dropdown-item ">Electronic</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Hip Hop</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Rock &amp; Indie</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz,back_in_stock_electronic,back_in_stock_hip_hop,back_in_stock_hip_hop" class="dropdown-item">All Back In Stock</a>
+                        <a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz" class="dropdown-item">Funk
+                            Soul &amp; Jazz</a>
+                        <a href="{% url 'products' %}?category=back_in_stock_electronic"
+                            class="dropdown-item ">Electronic</a>
+                        <a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Hip
+                            Hop</a>
+                        <a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Rock &amp;
+                            Indie</a>
+                        <a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz,back_in_stock_electronic,back_in_stock_hip_hop,back_in_stock_hip_hop"
+                            class="dropdown-item">All Back In Stock</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -78,11 +88,15 @@
                         Pre Orders
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="pre-orders-link">
-                        <a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz" class="dropdown-item">Funk Soul &amp; Jazz</a>
-                        <a href="{% url 'products' %}?category=pre_orders_electronic" class="dropdown-item ">Electronic</a>
+                        <a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz" class="dropdown-item">Funk
+                            Soul &amp; Jazz</a>
+                        <a href="{% url 'products' %}?category=pre_orders_electronic"
+                            class="dropdown-item ">Electronic</a>
                         <a href="{% url 'products' %}?category=pre_orders_hip_hop" class="dropdown-item ">Hip Hop</a>
-                        <a href="{% url 'products' %}?category=pre_orders_rock_indie" class="dropdown-item">Rock &amp; Indie</a>
-                        <a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz,pre_orders_electronic,pre_orders_hip_hop,pre_orders_rock_indie" class="dropdown-item">All Preorders</a>
+                        <a href="{% url 'products' %}?category=pre_orders_rock_indie" class="dropdown-item">Rock &amp;
+                            Indie</a>
+                        <a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz,pre_orders_electronic,pre_orders_hip_hop,pre_orders_rock_indie"
+                            class="dropdown-item">All Preorders</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -94,7 +108,8 @@
                         <a href="{% url 'products' %}?category=clothing" class="dropdown-item ">Clothing</a>
                         <a href="{% url 'products' %}?category=slip_mats" class="dropdown-item ">Slipmats</a>
                         <a href="{% url 'products' %}?category=books" class="dropdown-item">Books</a>
-                        <a href="{% url 'products' %}?category=clothing,slipmats,books" class="dropdown-item">All Merchandise</a>
+                        <a href="{% url 'products' %}?category=clothing,slipmats,books" class="dropdown-item">All
+                            Merchandise</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -107,7 +122,8 @@
                         <a href="{% url 'products' %}?category=vinly_cleaning" class="dropdown-item">Vinyl Cleaning</a>
                         <a href="{% url 'products' %}?category=record_bags" class="dropdown-item">Record Bags</a>
                         <a href="{% url 'products' %}?category=cartidges" class="dropdown-item">Cartridges</a>
-                        <a href="{% url 'products' %}?category=head_phones,vinly_cleaning,record_bags,cartidges" class="dropdown-item">All Equipment</a>
+                        <a href="{% url 'products' %}?category=head_phones,vinly_cleaning,record_bags,cartidges"
+                            class="dropdown-item">All Equipment</a>
                     </div>
                 </li>
                 <li class="dropdown-divider d-md-none d-block"></li>
@@ -146,14 +162,14 @@
                     <div class="dropdown-menu" aria-labelledby="accountDropdown">
                         {% if request.user.is_superuser %}
                         <a href="" class="dropdown-item">
-                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-edit"></i>
                         </a>
                         {% endif %}
                         <a class="dropdown-item" href="">
-                            <i class="fas fa-user"></i> 
+                            <i class="fas fa-user"></i>
                         </a>
                         <a class="dropdown-item" href="">
-                            <i class="fas fa-history"></i> 
+                            <i class="fas fa-history"></i>
                         </a>
                         <a class="dropdown-item border-top" href="{% url 'account_logout' %}">
                             <i class="fas fa-sign-out-alt"></i> Logout
@@ -170,7 +186,8 @@
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link py-0 {% if grand_total %}text-warning {% else %}{% endif %}" href="">
+                    <a class="nav-link py-0 {% if grand_total %}text-warning {% else %}{% endif %}"
+                        href="{% url 'view_bag' %}">
                         <div class="text-center">
                             <div><i class="fas fa-shopping-cart"></i></div>
                             <small>
@@ -184,10 +201,9 @@
                     </a>
                 </li>
             </ul>
-
-            <form method="GET" action="" class="form-inline my-2 my-lg-0 d-none d-lg-block">
+            <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
                 <div class="input-group">
-                    <input class="form-control" type="text" name="serach_term_input" placeholder="Search"
+                    <input class="form-control" type="text" name="q" placeholder="Search"
                         aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-outline-dark my-2 my-sm-0 border-white rounded-right" type="submit">
@@ -197,6 +213,5 @@
                 </div>
             </form>
         </div>
-    </div>
     </div>
 </nav>
