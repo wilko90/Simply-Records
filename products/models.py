@@ -23,6 +23,7 @@ class Product(models.Model):
     description = models.TextField()
     genre = models.CharField(max_length=24, null=True, blank=True)
     format_size = models.DecimalField(max_digits=2, decimal_places=0, null=True, blank=True)
+    has_formats = models.BooleanField(default=False, null=True, blank=True)
     track_list = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
