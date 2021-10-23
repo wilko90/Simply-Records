@@ -16,4 +16,9 @@ $(document).ready(function() {
     $('#search-button').click(function () {
       $('#search-form-container').slideToggle('fast');
     });
+  
+   /**
+   *  Initializes Bootstrap toasts
+   */
+    $('.toast').toast('show');
 });
