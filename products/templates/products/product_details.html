@@ -85,6 +85,10 @@
                                 </div>
                             </div>
                         </div>
+                        <small class="ml-3">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
 
                         <div class="col{% if s %}-12 mt-2{% endif %}">
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">

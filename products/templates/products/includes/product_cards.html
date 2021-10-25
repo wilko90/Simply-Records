@@ -16,9 +16,9 @@
         <span class="card-margin">{{ product.price }}</span> <br>
         <i class="fas fa-tag"></i>
         {% if product.category %}
-        <a class="text-muted category-badge text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
-            <span 
-                class="">{{ product.category.friendly_name }}
+        <a class="text-muted category-badge text-decoration-none"
+            href="{% url 'products' %}?category={{ product.category.name }}">
+            <span class="">{{ product.category.friendly_name }}
             </span>
         </a>
         {% endif %}
@@ -28,7 +28,12 @@
                 <a href="{% url 'product_details' product.id %}"><button type="button"
                         class="btn btn-sm btn-outline-secondary">View</button></a>
             </div>
-            <small class="text-muted">{{ product.format_format }}"</small>
+            {% if request.user.is_superuser %}
+            <small class="ml-3">
+                <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+            </small>
+            {% endif %}
         </div>
     </div>
 </div>
