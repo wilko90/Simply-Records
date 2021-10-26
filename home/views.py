@@ -9,6 +9,7 @@ def index(request):
     try:
         products = Product.objects.all()
         home_pre_orders = Product.objects.filter(category__name='pre_orders_funk_soul_jazz')
+        merchandise = Product.objects.filter(category__name='slip_mats')
     except ObjectDoesNotExist:
         products = None
 
@@ -16,5 +17,6 @@ def index(request):
     context = {
         'products': products,
         'home_pre_orders': home_pre_orders,
+        'merchandise': merchandise,
     }
     return render(request, 'home/index.html', context)

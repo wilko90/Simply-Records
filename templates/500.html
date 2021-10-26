@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock%}
+
+{% block content %}
+    <div class="container-fluid" id="error-container">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h1 class="text-dark text-uppercase">No records here! Something Went Wrong.</h1>
+                <!-- Home button -->
+                <a class="btn btn-outline-dark btn-lg my-3 text-uppercase fw-bold" href="{% url 'home' %}">
+                    <span class="text-uppercase fw-bold">Home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
