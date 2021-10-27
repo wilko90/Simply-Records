@@ -74,11 +74,11 @@
                             Soul &amp; Jazz</a>
                         <a href="{% url 'products' %}?category=back_in_stock_electronic"
                             class="dropdown-item ">Electronic</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Hip
-                            Hop</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Rock &amp;
+                        <a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Rock &amp;
                             Indie</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz,back_in_stock_electronic,back_in_stock_hip_hop,back_in_stock_hip_hop"
+                        <a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Hip
+                            Hop</a>
+                        <a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz,back_in_stock_electronic,back_in_stock_hip_hop,back_in_stock_rock_indie"
                             class="dropdown-item">All Back In Stock</a>
                     </div>
                 </li>
@@ -99,15 +99,13 @@
                             class="dropdown-item">All Preorders</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="ogo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=merchandise_products" id="merchandise-link"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=merchandise_products" id="merchandise-link">
                         Merchandise
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="ogo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=equipment_products" id="equipment-link"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=equipment_products" id="equipment-link">
                         Equipment
                     </a>
                 </li>
