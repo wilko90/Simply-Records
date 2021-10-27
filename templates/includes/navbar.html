@@ -147,10 +147,6 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="accountDropdown">
                         {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}">
                             My Profile
                         </a>
@@ -160,6 +156,7 @@
                         <a class="dropdown-item border-top" href="{% url 'account_logout' %}">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
+                        {% endif %}
                     </div>
                 </li>
                 {% else %}
