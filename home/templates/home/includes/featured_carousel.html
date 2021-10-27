@@ -4,11 +4,17 @@
         <div id="news-slider" class="owl-carousel">
             {% for product in products %}
             <div class="product">
-                <div class="product-image"> <a href="{% url 'product_details' product.id %}" class="image"> <img src="{{ product.image.url }}" class="pic-1">
-                        <img src="{{ product.image.url }}" class="pic-2"> </a>
+                {% if product.image %}
+                <div class="product-image"> <a href="{% url 'product_details' product.id %}" class="image"> <img src="{{ product.image.url }}" alt="{{ product.name }}" class="pic-1">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="pic-2"> </a>
                 </div>
-                <div class="content"> <span class="category"><a href="">{{ product.genre }}</a></span>
-                    <h3 class="title"><a href="% url 'product_details' product.id %}">{{ product.name }}</a></h3>
+                {% else %}
+                <div class="product-image"> <a href="{% url 'product_details' product.id %}" class="image"> <img src="{{ MEDIA_URL }}no_image.png" alt="No Image" class="pic-1">
+                    <img src="{{ MEDIA_URL }}no_image.png" alt="No Image" class="pic-2"></a>
+                </div>
+                {% endif %}
+                <div class="content"> <span class="category text-muted">{{ product.genre }}</span>
+                    <h3 class="title"><a href="{% url 'product_details' product.id %}">{{ product.name }}</a></h3>
                     <div class="price"><span>Price</span>{{ product.price }}</div>
                 </div>
             </div>
