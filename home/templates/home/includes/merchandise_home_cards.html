@@ -1,27 +1,29 @@
 <div class="container-fluid">
     <div class="row">
-        <h1 class="display-6 font-weight-normal center sub-title-padding">Slipmats</h1>
+        <h1 class="display-6 font-weight-normal center sub-title-padding">Merchandise</h1>
     </div>
     <div class="row">
-        {% for pre_orders_funk_soul_jazz in home_pre_orders|slice:":6" %}
+        {% for merchandise_products in merchandise|slice:":6" %}
         <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
             <div class="card mb-4 shadow-sm">
-                {% if pre_orders_funk_soul_jazz.image %}
-                <a href="{% url 'product_details' pre_orders_funk_soul_jazz.id %}"><img class="card-img-top"
-                        src="{{ pre_orders_funk_soul_jazz.image.url }}" data-holder-rendered="true"
-                        alt="{{ pre_orders_funk_soul_jazz.product.name }}">
+                {% if merchandise_products.image %}
+                <a href="{% url 'product_details' merchandise_products.id %}"><img class="card-img-top"
+                        src="{{ merchandise_products.image.url }}" data-holder-rendered="true"
+                        alt="{{ merchandise_products.product.name }}">
                 </a>
                 {% else %}
-                <a href="{% url 'product_details' pre_orders_funk_soul_jazz.id %}"><img class="card-img-top"
-                        src="{{ MEDIA_URL }}no_image.png" data-holder-rendered="true"
-                        alt="No Image">
+                <a href="{% url 'product_details' merchandise_products.id %}"><img class="card-img-top"
+                        src="{{ MEDIA_URL }}no_image.png" data-holder-rendered="true" alt="No Image">
                 </a>
                 {% endif %}
                 <div class="card-body product-details-container">
-                    <span class="upper-case card-margin bold">{{ pre_orders_funk_soul_jazz.name }}</span>
+                    <span class="upper-case card-margin bold">{{ merchandise_products.name }}</span>
                     <br>
-                    <span class="card-margin">{{ pre_orders_funk_soul_jazz.label_name }}</span> <br>
-                    <span class="card-margin">{{ pre_orders_funk_soul_jazz.genre }}</span>
+                    <span class="card-margin">{{ merchandise_products.label_name }}</span> <br>
+                    <a class="text-muted category-badge text-decoration-none"
+                        href="{% url 'products' %}?category=merchandise_products">
+                        <span class="">Merchandise</span>
+                    </a>
                 </div>
 
             </div>
