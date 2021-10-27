@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'mailing_list',
 
      # Other
     'crispy_forms',
@@ -213,9 +214,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 FREE_DELIVERY_THRESHOLD = 70
 STANDARD_DELIVERY_PERCENTAGE = 10
 
-
-FREE_DELIVERY_THRESHOLD = 50
-STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
