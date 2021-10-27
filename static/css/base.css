@@ -33,6 +33,7 @@ body{
 	padding-top: 165px;
 
 }
+
 .bg-light{
     background-color: var(--offwhite) !important;
 }
@@ -442,6 +443,11 @@ a {
 	font-weight: 400 !important
 	;
 }
+.custom-select{
+	width: 30% !important;
+	float: right;
+	margin-bottom: 10px;
+}
 /* Footer*/
 .footer-clean {
 	padding:20px 0;
@@ -615,9 +621,6 @@ a {
 	border-color: #222;
 }
   
-  .allauth-form-inner-content a {
-  color: #17a2b8; /* text-info */
-}
 
   @media (min-width: 992px) {
     .fixed-top-desktop-only {
