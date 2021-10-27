@@ -30,6 +30,8 @@ body{
     font-size: .9rem;
     height: calc(100vh - 58px);
     background-color: #fff;
+	padding-top: 165px;
+
 }
 .bg-light{
     background-color: var(--offwhite) !important;
@@ -93,6 +95,7 @@ a{
 .update-link,
 .remove-item {
     cursor: pointer;
+	border-color: var(--blackish);
 }
 
 input[name='q']::placeholder {
