@@ -7,15 +7,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 center">
-            <h1 class="mt-4 mb-2 font-weight-normal sub-title-padding">Products
+            {% for c in current_categories %}
+            <h1 class="mt-4 mb-2 font-weight-normal sub-title-padding">{{ c.friendly_name }}
                 <hr class=" hr center mt-3">
             </h1>
-
-            {% for c in current_categories %}
-
-            <a class="category-text text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                <span class="p-2 mt-2 badge badge-white rounded-0 border border-dark">{{ c.friendly_name }}</span>
-            </a>
             {% endfor %}
         </div>
     </div>
@@ -25,7 +20,7 @@
                 {% if search_term or current_categories or current_sorting != 'None_None' %}
                 <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
                 {% endif %}
-                {{ products|length }} Products{% if search_term %} found for
+                {{ products|length }} All Products{% if search_term %} found for
                 <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
         </div>
