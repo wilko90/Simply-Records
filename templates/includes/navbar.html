@@ -100,31 +100,16 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="ogo-font font-weight-bold nav-link text-black mr-5" href="#" id="merchandise-link"
+                    <a class="ogo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=merchandise_products" id="merchandise-link"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Merchandise
                     </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="merchandise-link">
-                        <a href="{% url 'products' %}?category=clothing" class="dropdown-item ">Clothing</a>
-                        <a href="{% url 'products' %}?category=slip_mats" class="dropdown-item ">Slipmats</a>
-                        <a href="{% url 'products' %}?category=books" class="dropdown-item">Books</a>
-                        <a href="{% url 'products' %}?category=clothing,slip_mats,books" class="dropdown-item">All
-                            Merchandise</a>
-                    </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="ogo-font font-weight-bold nav-link text-black mr-5" href="#" id="equipment-link"
+                    <a class="ogo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=equipment_products" id="equipment-link"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Equipment
                     </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="equipment-link">
-                        <a href="{% url 'products' %}?category=head_phones" class="dropdown-item">Head Phones</a>
-                        <a href="{% url 'products' %}?category=vinly_cleaning" class="dropdown-item">Vinyl Cleaning</a>
-                        <a href="{% url 'products' %}?category=record_bags" class="dropdown-item">Record Bags</a>
-                        <a href="{% url 'products' %}?category=cartidges" class="dropdown-item">Cartridges</a>
-                        <a href="{% url 'products' %}?category=head_phones,vinly_cleaning,record_bags,cartidges"
-                            class="dropdown-item">All Equipment</a>
-                    </div>
                 </li>
                 <li class="dropdown-divider d-md-none d-block"></li>
                 {% if request.user.is_authenticated %}
