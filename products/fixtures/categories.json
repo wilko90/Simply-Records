@@ -1,155 +1,115 @@
-[
-    {
-       "pk":1,
-       "model":"products.category",
-       "fields":{
-          "name":"new_releases_funk_soul_jazz",
-          "friendly_name":"New Releases Funk Soul & Jazz"
-       }
-    },
-    {
-      "pk":2,
-      "model":"products.category",
-      "fields":{
-         "name":"new_releases_electronic",
-         "friendly_name":"New Releases Electronic"
+[{
+      "pk": 1,
+      "model": "products.category",
+      "fields": {
+         "name": "new_releases_funk_soul_jazz",
+         "friendly_name": "New Releases Funk Soul & Jazz"
       }
    },
    {
-       "pk":3,
-       "model":"products.category",
-       "fields":{
-          "name":"new_releases_hip_hop",
-          "friendly_name":"New Releases Hip Hop"
-       }
-    },
-    {
-      "pk":4,
-      "model":"products.category",
-      "fields":{
-         "name":"new_releases_rock_indie",
-         "friendly_name":"New Releases Rock & Indie"
-      }
-   },
-    {
-       "pk":5,
-       "model":"products.category",
-       "fields":{
-          "name":"back_in_stock_funk_soul_jazz",
-          "friendly_name":"Back in Stock Funk Soul & Jazz"
-       }
-    },
-    {
-      "pk":6,
-      "model":"products.category",
-      "fields":{
-         "name":"back_in_stock_electronic",
-         "friendly_name":"Back in Stock Electronic"
+      "pk": 2,
+      "model": "products.category",
+      "fields": {
+         "name": "new_releases_electronic",
+         "friendly_name": "New Releases Electronic"
       }
    },
    {
-      "pk":7,
-      "model":"products.category",
-      "fields":{
-         "name":"back_in_stock_hip_hop",
-         "friendly_name":"Back in Stock Hip Hop"
+      "pk": 3,
+      "model": "products.category",
+      "fields": {
+         "name": "new_releases_hip_hop",
+         "friendly_name": "New Releases Hip Hop"
       }
    },
    {
-      "pk":8,
-      "model":"products.category",
-      "fields":{
-         "name":"back_in_stock_rock_indie",
-         "friendly_name":"Back in Stock Rock & Indie"
-      }
-   },
-    {
-       "pk":9,
-       "model":"products.category",
-       "fields":{
-          "name":"pre_orders_funk_soul_jazz",
-          "friendly_name":"Pre Orders Funk Soul & Jazz"
-       }
-    },
-    {
-      "pk":10,
-      "model":"products.category",
-      "fields":{
-         "name":"pre_orders_electronic",
-         "friendly_name":"Pre Orders Electronic"
+      "pk": 4,
+      "model": "products.category",
+      "fields": {
+         "name": "new_releases_rock_indie",
+         "friendly_name": "New Releases Rock & Indie"
       }
    },
    {
-      "pk":11,
-      "model":"products.category",
-      "fields":{
-         "name":"pre_orders_hip_hop",
-         "friendly_name":"Pre Orders Hip Hop"
+      "pk": 5,
+      "model": "products.category",
+      "fields": {
+         "name": "back_in_stock_funk_soul_jazz",
+         "friendly_name": "Back in Stock Funk Soul & Jazz"
       }
    },
    {
-      "pk":12,
-      "model":"products.category",
-      "fields":{
-         "name":"pre_orders_rock_indie",
-         "friendly_name":"Pre Orders Rock & Indie"
+      "pk": 6,
+      "model": "products.category",
+      "fields": {
+         "name": "back_in_stock_electronic",
+         "friendly_name": "Back in Stock Electronic"
       }
    },
-    {
-       "pk":13,
-       "model":"products.category",
-       "fields":{
-          "name":"slip_mats",
-          "friendly_name":"Slipmats"
-       }
-    },
-    {
-       "pk":14,
-       "model":"products.category",
-       "fields":{
-          "name":"clothing",
-          "friendly_name":"Clothing"
-       }
-    },   
-    {
-        "pk":15,
-        "model":"products.category",
-        "fields":{
-           "name":"books",
-           "friendly_name":"Books"
-        }
-    },
-    {
-      "pk":16,
-      "model":"products.category",
-      "fields":{
-         "name":"head_phones",
-         "friendly_name":"Head Phones"
+   {
+      "pk": 7,
+      "model": "products.category",
+      "fields": {
+         "name": "back_in_stock_hip_hop",
+         "friendly_name": "Back in Stock Hip Hop"
       }
-  },
-  {
-   "pk":17,
-   "model":"products.category",
-   "fields":{
-      "name":"record_bags",
-      "friendly_name":"Record Bags"
+   },
+   {
+      "pk": 8,
+      "model": "products.category",
+      "fields": {
+         "name": "back_in_stock_rock_indie",
+         "friendly_name": "Back in Stock Rock & Indie"
+      }
+   },
+   {
+      "pk": 9,
+      "model": "products.category",
+      "fields": {
+         "name": "pre_orders_funk_soul_jazz",
+         "friendly_name": "Pre Orders Funk Soul & Jazz"
+      }
+   },
+   {
+      "pk": 10,
+      "model": "products.category",
+      "fields": {
+         "name": "pre_orders_electronic",
+         "friendly_name": "Pre Orders Electronic"
+      }
+   },
+   {
+      "pk": 11,
+      "model": "products.category",
+      "fields": {
+         "name": "pre_orders_hip_hop",
+         "friendly_name": "Pre Orders Hip Hop"
+      }
+   },
+   {
+      "pk": 12,
+      "model": "products.category",
+      "fields": {
+         "name": "pre_orders_rock_indie",
+         "friendly_name": "Pre Orders Rock & Indie"
+      }
+   },
+   {
+      "pk": 13,
+      "model": "products.category",
+      "fields": {
+         "name": "equipment_products",
+         "friendly_name": "Equipment"
+      }
+   },
+   {
+
+      "pk": 14,
+      "model": "products.category",
+      "fields": {
+         "name": "merchandise_products",
+         "friendly_name": "Merchandise"
+      }
    }
-},
-{
-   "pk":18,
-   "model":"products.category",
-   "fields":{
-      "name":"vinyl_cleaning",
-      "friendly_name":"Vinyl Cleaning"
-   }
-},
-{
-   "pk":19,
-   "model":"products.category",
-   "fields":{
-      "name":"cartridges",
-      "friendly_name":"Cartridges"
-   }
-}
-    
- ]
+
+]
