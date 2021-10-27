@@ -31,9 +31,21 @@
             {% if request.user.is_superuser %}
             <small class="ml-3">
                 <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                <a type="button" data-toggle="modal" data-target="#exampleModal" class="btn film-card-buttons modal-trigger" href="#delete_modal">Delete</a>
             </small>
             {% endif %}
         </div>
     </div>
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          Are you sure you want to delete?
+        </div>
+        <div class="modal-footer">
+          <a href="{% url 'edit_product' product.id %}"><button type="button" class="btn btn-primary">Delete</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
