@@ -1,194 +1,205 @@
-
-<nav class="d-flex nav-header navbar-dark navbar navbar-expand-lg">
-    <div class="d-flex navbar-expand-md flex-column flex-md-row navbar-collapse">
-        <div class="d-flex">
-            <button class="navbar-toggler px-2" type="button" data-toggle="collapse" data-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--Logo-->
-            <a class="navbar-brand px-2" href="{% url 'home' %}">
-                <img src="/static/img/logo3.png" alt="logo" class="logo">
-            </a>
-            <!--Search button-->
-            <div class="d-flex">
-                <div class="btn d-block d-lg-none mr-md-3" id="search-button">
-                    <div class="text-center text-white d-flex flex-column justify-content-between">
-                        <i class="fas fa-search"></i>
-                        <small class="mt-1 small-text-navbar">Search</small>
-                    </div>
-                </div>
-                <a href="{% url 'view_bag' %}" class="btn d-block d-md-none {% if grand_total %}text-warning {% else %}{% endif %}">
-                    <div
-                        class="text-center d-flex flex-column justify-content-between {% if grand_total %}text-warning {% else %}{% endif %}">
-                        <i class="fas fa-shopping-cart"></i>
-                        <small class="mt-1 small-text-navbar">
-                            {% if grand_total %}
-                            <span class="font-weight-bold"> €&nbsp;{{ grand_total|floatformat:2 }} </span>
+<header class="container-fluid fixed-top">
+    <div id="top-topnav" class="row top-nav">
+        <div class="col-6 d-none">
+            
+        </div>
+        <!-- Login, register and account links -->
+        <div class="col-lg-5 col-md-10 col-9 d-flex justify-content-start me-auto">
+            <ul class="list-inline list-unstyled my-1">
+                {% if request.user.is_authenticated %}
+                    <li class="list-inline-item">
+                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_logout' %}">
+                            <!-- Responsive behaviour - visible on all screens >575px -->
+                            <div class="d-none d-sm-block">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Log out
+                            </div>
+                            <!-- Responsive behaviour - visible on all screens <575px -->
+                            <div class="d-block d-sm-none">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'profile' %}">
+                            <!-- Responsive behaviour - visible on all screens over >575px -->
+                            <div class="d-none d-sm-block">
+                                <i class="fas fa-user-alt"></i> 
+                                My Account
+                            </div>
+                            <!-- Responsive behaviour - visible on all screens over <575px -->
+                            <div class="d-block d-sm-none">
+                                <i class="fas fa-user-alt"></i> 
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'add_product' %}">
+                            <!-- Responsive behaviour - visible on all screens over >575px -->
+                            <div class="d-none d-sm-block">
+                                <i class="fas fas fa-plus"></i> 
+                                Add Product
+                            </div>
+                            <!-- Responsive behaviour - visible on all screens over <575px -->
+                            <div class="d-block d-sm-none">
+                                <i class="fas fa-plus"></i> 
+                            </div>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="list-inline-item">
+                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_login' %}">
+                            Login
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_signup' %}">
+                            Register
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        <!-- Shopping cart summary display -->
+        <div class="col-lg-1 col-md-2 col-3d-flex justify-content-center">
+            <a class="{% if item_total %}font-weight-bold{% else %}text-black{% endif %} px-0 py-0 no-decoration" href="{% url 'view_bag' %}">
+                <ul class="list-inline list-unstyled my-1">
+                    <li class="list-inline-item"><i class="fas fa-shopping-cart"></i></li>
+                    <li class="list-inline-item">
+                        {% if grand_total %}
+                            <span class="font-weight-bold"> £&nbsp;{{ grand_total|floatformat:2 }} </span>
                             {% else %}
-                            €&nbsp;0.00
+                            £&nbsp;0.00
                             {% endif %}
-                        </small>
+                    </li>
+                </ul>
+            </a>
+        </div>
+    </div>
+    <!-- Bottom row of the navbar (black) -->
+    <div id="bottom-topnav" class="row bot-nav p-3">
+        <!-- Navigation menu-->
+        <div class=" col-2 col-lg-4 flex justify-content-start my-auto">
+            <nav class="navbar navbar-expand-lg  navbar-dark bot-nav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Shop Front menu -->
+                        <li class="nav-item mt-2 dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                New Releases
+                            </a>
+                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
+                                <li><a href="{% url 'products' %}?category=new_releases_funk_soul_jazz" class="dropdown-item">Funk
+                                    Soul &amp; Jazz</a></li>
+                                    <li><a href="{% url 'products' %}?category=new_releases_electronic"
+                                    class="dropdown-item ">Electronic</a></li>
+                                    <li><a href="{% url 'products' %}?category=new_releases_hip_hop" class="dropdown-item ">Hip Hop</a></li>
+                                        <li><a href="{% url 'products' %}?category=new_releases_rock_indie" class="dropdown-item">Rock &amp;
+                                    Indie</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mt-2 dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Back in Stock
+                            </a>
+                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
+                                <li></li><a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz" class="dropdown-item">Funk
+                                    Soul &amp; Jazz</a></li>
+                                    <li><a href="{% url 'products' %}?category=back_in_stock_electronic"
+                                    class="dropdown-item ">Electronic</a></li>
+                                    <li><a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Rock
+                                    &amp;
+                                    Indie</a></li>
+                                    <li><a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Hip
+                                    Hop</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mt-2 dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pre Orders
+                            </a>
+                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
+                                <li><a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz" class="dropdown-item">Funk
+                                    Soul &amp; Jazz</a></li>
+                                    <li><a href="{% url 'products' %}?category=pre_orders_electronic"
+                                    class="dropdown-item ">Electronic</a></li>
+                                    <li><a href="{% url 'products' %}?category=pre_orders_hip_hop" class="dropdown-item ">Hip Hop</a></li>
+                                        <li><a href="{% url 'products' %}?category=pre_orders_rock_indie" class="dropdown-item">Rock &amp;
+                                    Indie</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mt-2 dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Merchandise
+                            </a>
+                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
+                                <li><a class="logo-font font-weight-bold nav-link text-black mr-5"
+                                    href="{% url 'products' %}?category=merchandise_products" id="merchandise-link">
+                                    Merchandise
+                                </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mt-2 dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Equipment
+                            </a>
+                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
+                                <li> <a class="logo-font font-weight-bold nav-link text-black mr-5"
+                                    href="{% url 'products' %}?category=equipment_products" id="equipment-link">
+                                    Equipment
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Store Logo -->
+        <div class="col-8 col-lg-4 my-lg-auto">
+            <a href="{% url 'home' %}" class="nav-link">
+                <div class="text-center text-light">
+                    <img src="/static/img/logo3.png" alt="logo" width="100" class="logo-image">
+                </div>
+            </a>
+        </div>
+        <!-- Search Function -->
+        <!-- Displays on large screens (992px and above) -->
+        <div class="col-4 d-flex justify-content-end d-none d-lg-flex">
+            <form method="GET" action="{% url 'products' %}" class="my-auto" id="nav-search">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" placeholder="Search for records">
+                    <button class="btn btn-outline" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <!-- Displays on tablet and mobile screens (991px and below) -->
+        <div class="col-2 d-flex justify-content-end d-block d-lg-none">
+            <div id="mobile-search-btn">
+                <a href="#" role="button">
+                    <div class="border border-light rounded-1 text-light rounded-1 ">
+                        <i class="px-2 py-2 fas fa-search"></i>
                     </div>
                 </a>
             </div>
         </div>
-        <!--Search form for mobile and tablet-->
-        <div class="px-1py-1" id="search-form-container">
-            <form method="GET" action="{% url 'products' %}">
-                <div class="input-group">
-                    <input class="form-control" type="text" name="q" placeholder="Search our site">
-                    <div class="input-group-append">
-                        <button class="btn button-black border-white rounded-right" type="submit">
-                            <i class="fas fa-search text-white"></i>
-                        </button>
+        <div class="row" id="search-input">
+            <div class="col d-block d-lg-none">
+                <form method="GET" action="{% url 'products' %}" class="mb-2 ms-3 w-100">
+                    <div class="input-group ">
+                        <input class="form-control border btn-outline-light" type="text" name="q" placeholder="Search...">
+                    
                     </div>
-                </div>
-            </form>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="new-releases-link"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        New Releases
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="new-releases-link">
-                        <a href="{% url 'products' %}?category=new_releases_funk_soul_jazz" class="dropdown-item">Funk
-                            Soul &amp; Jazz</a>
-                        <a href="{% url 'products' %}?category=new_releases_electronic"
-                            class="dropdown-item ">Electronic</a>
-                        <a href="{% url 'products' %}?category=new_releases_hip_hop" class="dropdown-item ">Hip Hop</a>
-                        <a href="{% url 'products' %}?category=new_releases_rock_indie" class="dropdown-item">Rock &amp;
-                            Indie</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="back-in-stock-link"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Back In Stock
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="back-in-stock-link">
-                        <a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz" class="dropdown-item">Funk
-                            Soul &amp; Jazz</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_electronic"
-                            class="dropdown-item ">Electronic</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Rock &amp;
-                            Indie</a>
-                        <a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Hip
-                            Hop</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="pre-orders-link"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pre Orders
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="pre-orders-link">
-                        <a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz" class="dropdown-item">Funk
-                            Soul &amp; Jazz</a>
-                        <a href="{% url 'products' %}?category=pre_orders_electronic"
-                            class="dropdown-item ">Electronic</a>
-                        <a href="{% url 'products' %}?category=pre_orders_hip_hop" class="dropdown-item ">Hip Hop</a>
-                        <a href="{% url 'products' %}?category=pre_orders_rock_indie" class="dropdown-item">Rock &amp;
-                            Indie</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=merchandise_products" id="merchandise-link">
-                        Merchandise
-                    </a>
-                </li>
-                <li class="">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=equipment_products" id="equipment-link">
-                        Equipment
-                    </a>
-                </li>
-                <li class="dropdown-divider d-md-none d-block"></li>
-                {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="{% url 'add_product' %}">Manage Product</a>
-                </li>
-                {% endif %}
-                
-                <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="{% url 'account_logout' %}">Logout</a>
-                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                </li>
-
-                {% else %}
-                <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="{% url 'account_login' %}">Login</a>
-                </li>
-
-                <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="{% url 'account_signup' %}">Register</a>
-                </li>
-                {% endif %}
-            </ul>
-        </div>
-        <div class="d-none d-md-block ms-auto">
-            <ul class="nav">
-                {% if request.user.is_authenticated %}
-                <li class="nav-item mr-5 d-none d-md-block dropdown">
-                    <a class="nav-link py-0" href="#" id="accountDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <div class="text-center">
-                            <div><i class="fas fa-user"></i></div>
-                            <small class="my-0"></small>My Account
-                        </div>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="accountDropdown">
-                        {% if request.user.is_superuser %}
-                        <a class="dropdown-item" href="{% url 'profile' %}">
-                            My Profile
-                        </a>
-                        <a class="dropdown-item" href="{% url 'add_product' %}">
-                            Manage Product
-                        </a>
-                        <a class="dropdown-item border-top" href="{% url 'account_logout' %}">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
-                        {% endif %}
-                    </div>
-                </li>
-                {% else %}
-                <li class="nav-item d-none d-md-block my-auto">
-                    <a class="nav-link py-0 " href="{% url 'account_login' %}">Login</a>
-                </li>
-                <li class="nav-item d-none d-md-block my-auto">
-                    <a class="nav-link border-left border-white py-0 " href="{% url 'account_signup' %}">Register
-                    </a>
-                </li>
-                {% endif %}
-                <li class="nav-item">
-                    <a class="nav-link py-0 {% if grand_total %}text-warning {% else %}{% endif %}"
-                        href="{% url 'view_bag' %}">
-                        <div class="text-center">
-                            <div><i class="fas fa-shopping-cart"></i></div>
-                            <small>
-                                {% if grand_total %}
-                                <span class="font-weight-bold">£&nbsp;{{ grand_total|floatformat:2 }}</span>
-                                {% else %}
-                                £&nbsp;0.00
-                                {% endif %}
-                            </small>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
-                <div class="input-group">
-                    <input class="form-control" type="text" name="q" placeholder="Search"
-                        aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-dark my-2 my-sm-0 border-white rounded-right" type="submit">
-                            <i class="fas fa-search text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</nav>
+    <!-- Delivery banner -->
+    <div id="delivery-banner" class="row text-center shipping-banner">
+        <div class="col delivery-banner">
+            <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>
+        </div>
+    </div>
+</header>
