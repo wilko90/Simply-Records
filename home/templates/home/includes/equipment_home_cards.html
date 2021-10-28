@@ -4,7 +4,7 @@
     </div>
     <div class="row">
         {% for equipment_products in equipment|slice:":6" %}
-        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
+        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4 col-6">
             <div class="card mb-4 shadow-sm">
                 {% if equipment_products.image %}
                 <a href="{% url 'product_details' equipment_products.id %}"><img class="card-img-top"

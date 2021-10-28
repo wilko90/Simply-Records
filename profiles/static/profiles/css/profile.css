@@ -19,3 +19,9 @@
 #id_default_country option:first-child {
     color: #aab7c4;
 }
+.flex-wrapper {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+  }

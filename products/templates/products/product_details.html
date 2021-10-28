@@ -6,7 +6,7 @@
 <div class="container-fluid my-3 my-md-5">
     <div class="row mt-2">
         <div class="col offset-lg-2">
-            <a onclick="goBack()" id="product-back-btn" class="btn btn-outline-dark btn-lg pt-2">
+            <a onclick="history.go(-1)" id="product-back-btn" class="btn btn-lg pt-2">
                 <span>
                     <i class="fas fa-chevron-left"></i>
                 </span>
@@ -26,17 +26,16 @@
             {% endif %}
 
         </div>
-        <div class="col-xl-9 col-lg-9 col-md-6 col-sm-12 col-xs-12 justify-content-between flex-column mb-2 mb-lg-5">
+        <div class="col-xl-9 col-lg-9 col-md-6 col-sm-12 col-xs-12 justify-content-between flex-column">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <div
-                            class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-xs-12 text-xl-left text-lg-left text-md-left text-sm-center text-center">
+                            class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-xs-12 text-xl-left text-lg-left text-md-left text-sm-center">
                             <h1>{{ product.name }}</h1>
                             <h2>{{ product.label_name }}</h2>
                         </div>
-                        <div
-                            class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-xs-12 text-xl-right text-lg-right text-md-left text-sm-center text-center">
+                        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-xs-12 text-xl-right text-lg-right text-md-left text-sm-center">
                             <h3>
                                 <i class="fas fa-pound-sign"></i>
                                 <a href="" class="text-dark font-weight-bold">
@@ -44,7 +43,7 @@
                                 </a>
                             </h3>
                         </div>
-                        <div class="row">
+                        <div class="row raiting-margin">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 h4 ">
                                 {% if product.rating %}
                                 <small class=""><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
@@ -56,42 +55,40 @@
                     </div>
                </div>
             </div>
-            <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-xl-left text-lg-left text-md-left text-sm-left text-center">
+            <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-xl-left text-lg-left text-md-left text-sm-left">
         
                     <h2>Description</h2>
                     <p class="description-p">{{ product.description }}</p>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
-                    <div class="form-row">
+                    <div class="form-row col-12">
                         {% with product.has_formats as s %}
                         {% if s %}
                         <div class="col-12">
                             <p><strong>Format:</strong></p>
-                            <select class="form-control rounded-0 w-50" name="product_format" id='id_product_format'>
+                            <select class="form-control form-width rounded-0" name="product_format" id='id_product_format'>
                                 <option value="7">7"</option>
                                 <option value="10">10"</option>
                                 <option value="12" selected>12"</option>
-                                <option value="cd" selected>CD</option>
-                                <option value="digital" selected>Digital</option>
                             </select>
                         </div>
                         {% endif %}
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
-                            <div class="form-group w-50">
+                            <div class="form-group form-width">
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button class="decrement-qty minus-btn btn bg-warning btn-outline-warning"
+                                    <div class="input-group-prepend center">
+                                        <button class="decrement-qty minus-btn btn "
                                             data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                            <i class="text-dark fas fa-minus"></i>
+                                            <i class="fas fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                    <input class="center-block form-control qty_input" type="number" name="quantity" value="1"
                                         min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                     <div class="input-group-append">
-                                        <button class="increment-qty plus-btn btn bg-warning btn-outline-warning"
+                                        <button class="increment-qty plus-btn btn "
                                             data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                            <i class="text-dark fas fa-plus"></i>
+                                            <i class="fas fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -127,101 +124,3 @@
 <script src="{% static 'js/quantity_input.js' %}"></script>
 {% endblock %}
 {% endblock %}
-
-<div class="single-product-description-wrapper col-xl-9 col-lg-9 col-md-6 col-sm-12 col-xs-12">
-
-    <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-            <div class="row">
-                <div
-                    class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-xs-12 text-xl-left text-lg-left text-md-left text-sm-center text-center">
-                    <h1><a id="172676" class="single-artist ajax-link"
-                            href="https://www.phonicarecords.com/artist/various-artists/172676/all/latest/desc">
-                            VARIOUS ARTISTS </a></h1>
-                    <h2><a id="172676" class="single-title ajax-link"
-                            href="https://www.phonicarecords.com/product/various-artists-midnight-rocks-secret-tapes-lp-acid-jazz/172676">
-                            Midnight Rock's Secret Tapes LP </a></h2>
-                    <p class="color-lightgrey bold">
-                        <a id="172676" class="single-label ajax-link"
-                            href="https://www.phonicarecords.com/label/acid-jazz/172676/all/latest/desc">
-                            ACID JAZZ </a>
-                    </p>
-                </div>
-                <div
-                    class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-xs-12 text-xl-right text-lg-right text-md-left text-sm-center text-center">
-                    <!-- WAS PRICE -->
-                    <h4 class="strikethrough display-none">
-                        £<span class="single-was-price"></span>
-                    </h4>
-                    <h3 class="price">£<span class="single-price">19.98</span></h3>
-                    <a id="single-buy" class="btn btn-primary btn-dark color-white buy" href="#" role="button">Add To
-                        Cart<svg class="svg-inline--fa fa-cart-plus fa-w-18 ml-2" aria-hidden="true" data-prefix="fas"
-                            data-icon="cart-plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
-                            data-fa-i2svg="">
-                            <path fill="currentColor"
-                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
-                            </path>
-                        </svg><!-- <i class="fas fa-cart-plus ml-2"></i> --></a>
-                    <div class="single-id display-none">172676</div>
-                    <div class="single-stock display-none">1</div>
-                    <div class="single-taxcat display-none">2</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="row">
-        <div
-            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 product-formats-reverse py-2 py-sm-2 py-md-2 py-lg-2 py-xl-2 mt-2 mt-sm-2 mt-md-2 mt-lg-0 mt-xl-0 h4 justify-content-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-sm-center">
-            <span class="single-format pr-3 pr-sm-3 pr-md-3 pr-lg-3 pr-xl-3">2 x LP</span>
-            <svg id="stock-indicator-172676"
-                class="svg-inline--fa fa-circle fa-w-16 single-availability circle-shape-green float-left display-block mr-3 mr-sm-3 mr-md-3 mr-lg-3 mr-xl-3"
-                aria-hidden="true" data-prefix="fas" data-icon="circle" role="img" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512" data-fa-i2svg="">
-                <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z">
-                </path>
-            </svg>
-            <!-- <i id="stock-indicator-172676" class="single-availability fas fa-circle circle-shape-green float-left display-block mr-3 mr-sm-3 mr-md-3 mr-lg-3 mr-xl-3"></i> -->
-            <a class="single-listenall single-addplaylist pointer pr-3 pr-sm-3 pr-md-3 pr-lg-3 pr-xl-3">
-                <svg class="svg-inline--fa fa-eye-slash fa-w-18" aria-hidden="true" data-prefix="far"
-                    data-icon="eye-slash" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
-                    data-fa-i2svg="">
-                    <path fill="currentColor"
-                        d="M272.702 359.139c-80.483-9.011-136.212-86.886-116.93-167.042l116.93 167.042zM288 392c-102.556 0-192.092-54.701-240-136 21.755-36.917 52.1-68.342 88.344-91.658l-27.541-39.343C67.001 152.234 31.921 188.741 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.004 376.006 168.14 440 288 440a332.89 332.89 0 0 0 39.648-2.367l-32.021-45.744A284.16 284.16 0 0 1 288 392zm281.354-111.631c-33.232 56.394-83.421 101.742-143.554 129.492l48.116 68.74c3.801 5.429 2.48 12.912-2.949 16.712L450.23 509.83c-5.429 3.801-12.912 2.48-16.712-2.949L102.084 33.399c-3.801-5.429-2.48-12.912 2.949-16.712L125.77 2.17c5.429-3.801 12.912-2.48 16.712 2.949l55.526 79.325C226.612 76.343 256.808 72 288 72c119.86 0 224.996 63.994 281.354 159.631a48.002 48.002 0 0 1 0 48.738zM528 256c-44.157-74.933-123.677-127.27-216.162-135.007C302.042 131.078 296 144.83 296 160c0 30.928 25.072 56 56 56s56-25.072 56-56l-.001-.042c30.632 57.277 16.739 130.26-36.928 171.719l26.695 38.135C452.626 346.551 498.308 306.386 528 256z">
-                    </path>
-                </svg><!-- <i class="far fa-eye-slash"></i> -->
-            </a>
-            <span class="archive-playlist display-none">
-            </span>
-            <a id="single-wishlist" class="wishlist pointer"><svg class="svg-inline--fa fa-heart fa-w-18"
-                    aria-hidden="true" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 576 512" data-fa-i2svg="">
-                    <path fill="currentColor"
-                        d="M414.9 24C361.8 24 312 65.7 288 89.3 264 65.7 214.2 24 161.1 24 70.3 24 16 76.9 16 165.5c0 72.6 66.8 133.3 69.2 135.4l187 180.8c8.8 8.5 22.8 8.5 31.6 0l186.7-180.2c2.7-2.7 69.5-63.5 69.5-136C560 76.9 505.7 24 414.9 24z">
-                    </path>
-                </svg><!-- <i class="fas fa-heart"></i> --></a>
-        </div>
-    </div>
-    <div class="row">
-        <div
-            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-xl-left text-lg-left text-md-left text-sm-left text-center">
-            <h2>Review</h2>
-            <div class="single-description-disclaimer display-none py-3">PRE-ORDER ITEM : Expected April 13th 2021. This
-                item will only be shipped to you on or after the official release date. Please note any orders
-                containing pre-order items won't be shipped until all items are available, so please order this
-                separately to avoid delays. Please remember that release dates are at the mercy of labels, distributors,
-                and pressing plants and will change constantly. </div>
-            <div class="single-description">
-                <p>Behind original rhythms recorded at Channel 1, Tuff Gong and others, featuring the Roots Radics and
-                    The Midnight Rock Band and mixed in places like King Jammy’s and Tubby’s we are presented with a
-                    line-up of stellar talent - Linval Thompson with the plaintive ‘I Can Be Your Man’, the forthright
-                    Super Cat on ‘Me Glad She Gone’ and Luciano on the rare ‘Good Thing Goin’ On’. They are joined by
-                    Courtney Melody, Pinchers and Joesy Wales, Daville and more. Keeping the circle complete, Thomas
-                    appears on two tracks, including the future classic ‘Sounds A Go Dead Tonight’ with Junior Vibes.
-                </p>
-            </div>
-        </div>
-    </div>
-
-</div>
