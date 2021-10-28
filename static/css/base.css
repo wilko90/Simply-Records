@@ -639,9 +639,17 @@ input[name='q']::placeholder {
 	background-color: #222;
 	border-color: #222;
 }
-  
+/* media queries */
+@media (max-width: 1024px) {
+	.new-pos{
+		position: absolute;
+		top: 0;
+		right: 35px;
 
-  @media (min-width: 992px) {
+	}
+	
+}
+	@media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -657,6 +665,13 @@ input[name='q']::placeholder {
 @media (max-width: 768px) {
 	.form-width{
 		width: 70%;
+	}
+	#mobile-search-btn {
+		margin-top: 30px;
+	}
+	.logo-image{
+		position: relative;
+		left: 0px;
 	}
 
 }
@@ -706,5 +721,21 @@ input[name='q']::placeholder {
     position: relative;
     top: 15px;
 	}
+	.dropdown-item{
+		font-size: 8px;
+	}
+	.custom-select{
+		width: 100% !important;
+	}
+	#mobile-search-btn {
+		margin-top: 20px;
+	}
+	.new-pos{
+		position: absolute;
+		top: 0;
+		right: 25px;
+
+	}
+
 	
 }

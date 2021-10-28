@@ -63,7 +63,7 @@
         <!-- Shopping cart summary display -->
         <div class="col-lg-1 col-md-2 col-3d-flex justify-content-center">
             <a class="{% if item_total %}font-weight-bold{% else %}text-black{% endif %} px-0 py-0 no-decoration" href="{% url 'view_bag' %}">
-                <ul class="list-inline list-unstyled my-1">
+                <ul class="list-inline new-pos list-unstyled my-1">
                     <li class="list-inline-item"><i class="fas fa-shopping-cart"></i></li>
                     <li class="list-inline-item">
                         {% if grand_total %}
@@ -76,7 +76,7 @@
             </a>
         </div>
     </div>
-    <!-- Bottom row of the navbar (black) -->
+    <!-- Bottom row of the navbar -->
     <div id="bottom-topnav" class="row bot-nav p-3">
         <!-- Navigation menu-->
         <div class=" col-2 col-lg-4 flex justify-content-start my-auto">
@@ -86,7 +86,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <!-- Shop Front menu -->
                         <li class="nav-item mt-2 dropdown">
                             <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 New Releases
