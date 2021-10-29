@@ -126,7 +126,6 @@ UK based online mail order record shop. We specialise in rare, deleted and promo
 | 05-03         | Site User   | Easily log in or log out                                     | Access my personal account and streamline the checkout       |
 | 05-04         | Site User   | Easily recover my password in case I forget it               | Recover access to my account                                 |
 | 05-05         | Site User   | Have a personalised account page                             | View order history, wishlist, and save, view and update contact and delivery information |
-
 |               |             |                                                              |                                                              |
 | 06-01         | Store Owner | Add a product                                                | Add new items to the store through streamlined interface     |
 | 06-02         | Store Owner | Edit and Update a product details                            | Change product prices, descriptions, images, and other product criteria |
@@ -186,15 +185,15 @@ Interactive Toast will render to reflect each type of action. e.g When a user ad
 ### Wireframes
 During the development process, changes have been made. All wireframes are the core skeleton to aid in the planning process and are not the final look of the design. I recommend that the PNGs are downloaded to be viewed in your browser.
 
-[Homepage](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-homepage.png)<br>
-  [Products](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-homepage.png)<br>
-  [Product details](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-filmdetails.png)<br>
- [Login](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-login.png)<br>
-  [Register](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-register.png)<br> 
-  [shopping bag](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-addfilm.png)<br>
-  [Sign in](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/mobile-home-film-login.png)<br>
-   [Checkout](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/mobile-add-detials-register.png)<br>
+[Homepage](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/Home.png)<br>
+[Products](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/Products.png)<br>
+[Product details](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/product%20details.png)<br>
+[Register](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/Register.png)<br> 
+[shopping bag](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/Shopping%20bag.png)<br>
+[Sign in](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/Sign%20in%20.png)<br>
+[Checkout](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/checkout.png)<br>
 
+## Database
 
 # Surface Plane <a name="surface-plane"></a>
 
