@@ -125,11 +125,11 @@ UK based online mail order record shop. We specialise in rare, deleted and promo
 | 05-02         | Site User   | Receive an email confirmation after registering              | Be sure that my account is created and verify that it is myself that set it up |
 | 05-03         | Site User   | Easily log in or log out                                     | Access my personal account and streamline the checkout       |
 | 05-04         | Site User   | Easily recover my password in case I forget it               | Recover access to my account                                 |
-| 05-05         | Site User   | Have a personalised account page                             | View order history, wishlist, and save, view and update contact and delivery information |
+| 05-05         | Site User   | Have a personalised account page                             | View order history, save, view and update contact and delivery information |
 |               |             |                                                              |                                                              |
 | 06-01         | Store Owner | Add a product                                                | Add new items to the store through streamlined interface     |
 | 06-02         | Store Owner | Edit and Update a product details                            | Change product prices, descriptions, images, and other product criteria |
-| 06-03         | Store Owner | Delete a product                                             | Remove items that are no longer available to buy             |
+| 06-03         | Store Owner | Delete a product                                             | Remove items and be asked prompted that I want to delete            |
 | 06-04         | Store Owner | Manage the attributes assigned to a product                  | Display and categorise products                              |
 | 06-05         | Store Owner | Provide a secure shopping experience                         | Have customers confidently returning to the store                 |
 

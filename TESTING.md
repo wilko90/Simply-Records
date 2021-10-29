@@ -15,9 +15,181 @@ For full readme [click here](README.md)
 
 # User Story Testing <a name="user-story"></a>
 
-# Reatures Testing <a name="manual-testing"></a>
+All user stories are tested in full and all came out successful. the users stories below are picked from each user story section, as a customer, user and site owner.  
+
+# As a customer i want to tbe able to View all of the products available from the store
+### Benchmark - To be able to view all products 
+* On intial contact the user is displayed with a C2A marked "shop now" once user clicks they are taken to the all products page
+#### Outcome - Successful 
+
+<img src="https://i.ibb.co/6J5xFdb/Screenshot-2021-10-29-at-16-59-34.png">
+
+# As a customer i want to be able to Select individual products to view
+### Benchmark - To be able to see a detailed view of a product
+* When a user initiates a product by selecting the title of image, they are then taken to the detailed view of that product 
+
+### Outcome Successful 
+
+<img src="https://i.ibb.co/KKpG29N/Screenshot-2021-10-29-at-20-50-54.png">
+
+# as a site user I want to be able to Have a personalised account page
+### Benchmark - To be able to see previous orders and contain my delivery information so I dont need to re add eveery time I make a purchase 
+* When a user navigates to the "My account button at the head of the page. when selected the user is displayed with there delivery information and previous orders. the user can also update this if needed. 
+
+### Outcome Successful 
+
+<img src="https://i.ibb.co/WnGXMd5/Screenshot-2021-10-29-at-21-02-30.png">
+
+# As a store owner I want to  Provide a secure shopping experience
+### Benchmark - To be able to see previous orders and contain my delivery information so I dont need to re add eveery time I make a purchase 
+* The websites payment function is powered by "stripe" this is one of the biggestes payment methods and is used by all mayjor brands. The user will have to input there 16 digit card number, expiry and security code. the user is all so clear of the total amount been charged to the card.  
+
+### Outcome Successful 
+
+<img src="https://i.ibb.co/QHChKVG/Screenshot-2021-10-29-at-21-08-42.png">
+
+# As a store owner I want to be able to add products with ease.
+### Benchmark - To be able to navigate with ease and add a product 
+* At the head of the page there is a plus icon that displays add product. when selected the user is presented with a form where they can add products.   
+
+### Outcome Successful 
+
+<img src="https://i.ibb.co/rHV5cr0/Screenshot-2021-10-29-at-21-16-52.png">
+
+<img src="https://i.ibb.co/16GGVTQ/Screenshot-2021-10-29-at-21-17-07.png">
+
+# As a user I want to be able to sign up to a newsletter  
+* At the foot of the page there is a banner that says sign up to newsletter in bold, there the user is prompted to enter there email address then is shown a successful message when completed.    
+
+### Outcome Successful 
+
+<img src="https://i.ibb.co/dgFNhks/Screenshot-2021-10-29-at-21-24-33.png">
+<img src="https://i.ibb.co/jh6V5zb/Screenshot-2021-10-29-at-21-25-30.png">
+
+
+
+
+
+# Features Testing <a name="manual-testing"></a>
+
+Features below are manual testing and described below
+
+## Registration
+* Ensure that when a user is not logged in, they can access the Register link within the NavBar/SideNav from any location on the site.
+* Ensure that when a user interacts with the Register link in the NavBar/SideNav, the registration page appears
+* Ensure that the form presented shows the fields username, password, confirm password, email address
+* Ensure that the following validation occurs
+  * Username
+     * Alert box pops up when fields are not entered correctly and hints to correct validation
+     * Ensure form can not be submitted if the username does not contain letters numbers and one case sensitive.
+  * Email address 
+    * Ensure the email is valid and contains the correct format
+    * Ensure that email has not already been used twice
+    * Ensure that email is confirmed by the user via email  
+  * Password
+      * Requirements: Required/Between 8 characters, with upper and lowercase letters
+      * If a user does not provide a password, a required message will prompt the user
+      * If the field is in an invalid state, and the user provides a valid password, they attempt to submit the form, the field reverts to its valid state.
+  * Password Confirmation
+    * Required/Must match Password
+    * if a user provides a valid confirmation password that matches, flash message registration is successful
+    * If a user does not provide a confirmation password, a required message prompts the user to provide a confirmation password
+    * If the users' password does no match, a user is prompted with a "passwords do not match" flash message
+* Ensure that when a user successfully registers, they are sent an email to activate there account. 
+* If a user has attempted to register an account with a username that already exists in the database, registration is unsuccessful, and the user is informed via a flash message that the username already exists.
+* If a user already has an account and needs to go to the login screen the link takes them there successfully
+## Login
+* Ensure that when a user is not logged in, they can access the login link within the NavBar/SideNav from any location on the site.
+*  Ensure that when a user interacts with the login link in the NavBar/SideNav, the login page appears
+* Ensure that the following validation occurs appropriately
+   * Username
+      * Alert box pops up when fields are empty
+      * If users enter incorrect details they are shown an Unsuccessful flash message
+      * If a user still has not created an account, the button is active and sends a user to a registration page 
+      * If a user matches the database with the correct username and password, a flash message is shown welcoming them with their name and is sent to the home page.
+* ## User Logout
+* Ensure that when a user is logged in, they can access the LogOut link within the NavBar/SideNav from any location on the site.
+* Ensure that when a user selects the Log Out link, they are logged out of the website.
+* Ensure when a user logs out they are prompted with a message and returned to the the home screen 
+
+## Nav Bar
+* On initial load ensure the navigation bar loads the full width of the screen with correct links and logo.
+* Ensure all links are active and not broken and send a user to the correct location
+* Ensure the navbar is sticky and is constantly at the head of a page
+* Ensure the logo is active and redirects the user to the home page
+* Ensure the shipping banner is present and shows correct price for free delivery
+
+## Home Page
+* Ensure all Images render correctly.
+* Ensure the C2A button is working correctly and directs the user to the all products page
+* Ensure carousel is active and displays product cards.
+    * Ensure each product card is interactive and when initiated sends the user to the films information.
+* Ensure footer is at the base of the page at all times.
+* Ensure search bar is active and function is working correctly .
+* Ensure relevant product categories are showing only 6 products.
+* Ensure all social links are active, open in a new tab when initiated and send a user to the correct location .
+
+## Products
+* On initial load Product cards render with amlunt of products at the right and filter options on the left.
+* Ensure the filter bar is working and filters to correct statment.
+    * Ensure if no search results are found the user is prompted with this
+* Product cards
+  * Ensure each Product card is active.
+  *  Ensure all Product cards show the title, price and cateogory link.
+  * Ensure when initiated it sends the user to the correct product.
+  * Ensure all category links are wokring and user is sent to correct category 
+  * Ensure six products are rendered on each line and are all in uniform
+
+## Product Detail
+* Ensure user is greeted with an image, title,price,raiting,description, QTY fields, edit/delete if created user, keep shopping button and add to bag.
+* ensure all link are working
+* Ensure qty field cant go below zero
+* Ensure back button send user back one step
+* Ensure when product is added to bag that the user is noted and the bag is updated
+* Ensure the correct qty is shown in bag
+
+## Bag
+* Ensure when there are no items in the cart the user is pompted with a keep shopping C2A
+* Ensure when user adds product to bag they are prompted with a toast that displays there order and discount information 
+* Ensure the bag shows the correct price at the head of the nav bar and the user can be sent to the bag items when selected
+* Ensure teh relevnt information is shown in the bag with grand total and information on how to qualify for the discount
+* Ensure the keep shopping and the secure payment buttons are working
+* Ensure the user can update ther cart with the input field and the price adjust accordingly 
+* Ensure the user can remove items
+
+## Checkout
+* Ensure page renders correctly 
+* Ensure 10 input fields are shown and a detailed view of order on right 
+* Ensure inout fields are:
+    * Name
+    * Email
+    * phone
+    * Street
+    * street 2
+    * Town
+    * County
+    * Postcode
+    * Country
+
 
 # Further Testing <a name="further-testing"></a>
+
+## Responsive Design
+
+All testing above was again tested on multiple devices through chrome developer tools with their `toggle device tool bar`
+
+Devices used for testing:
+* Moto G4
+* Galaxy S5
+* Pixel 2
+* Pixel 2XL
+* iPhone 5/SE
+* iPhone 6/7/8 (plus)
+* iPhone X
+* iPad
+* iPad Pro
+* Surface Duo
+* Galaxy Fold
 
 # Browser Testing <a name="browser-testing"></a>
 
