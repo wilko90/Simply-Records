@@ -193,9 +193,145 @@ During the development process, changes have been made. All wireframes are the c
 [Sign in](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/Sign%20in%20.png)<br>
 [Checkout](https://github.com/wilko90/Simply-Records/blob/main/static/wireframes/checkout.png)<br>
 
-## Database
+# Database
+During the development of this Django project, I worked with the SQLite3 database, which is the default database used by Django. For deployment of this project, I changed to a PostgreSQL database, that is provided by Heroku.
+
+Using Django Allauth and it's default `django.contrib.auth.models`, provided me with the the **User model** used in the profile app.
+
+The structure of the Product and Checkout apps are guided by the Code Institute's walkthrough project, **Boutique Ado**.
+
+### Data Models
+
+#### Profile app
+
+##### UserProfile model
+
+| Name             | Database Key         | Field Type           | Validation                                          |
+| ---------------- | -------------------- | -------------------- | --------------------------------------------------- |
+| User             | user                 | OneToOneField 'User' | on_delete=models.CASCADE                            |
+| Full Name        | default_full_name    | models.CharField     | max_length=50, default='', blank=True               |
+| Phone Number     | default_phone_number | models.CharField     | max_length=20, default='', blank=True               |
+| Street Address 1 | street_address1      | models.CharField     | max_length=80, default='', blank=True               |
+| Street Address 2 | street_address2      | models.CharField     | max_length=80, default='', blank=True               |
+| Town or City     | default_town_or_city | models.CharField     | max_length=40, default='', blank=True               |
+| County           | default_county       | models.CharField     | max_length=80, default='', blank=True               |
+| Postcode         | default_postcode     | models.CharField     | max_length=20, default='', blank=True               |
+| Country          | default_country      | models.CharField     | blank_label='Select Country', null=True, blank=True |
+
+#### Products app
+
+##### Category model
+
+| Name          | Database Key  | Field Type | Validation                             |
+| ------------- | ------------- | ---------- | -------------------------------------- |
+| Name          | name          | CharField  | max_length=254                         |
+| Friendly Name | friendly_name | CharField  | max_length=254, default='', blank=True |
+
+##### Product model
+
+| Name        | Database Key | Field Type          | Validation                                                    |
+| ----------- | ------------ | ------------------- | ------------------------------------------------------------- |
+| Category    | category     | models.ForeignKey   | 'Category', default='', blank=True, on_delete=models.SET_NULL |
+| Sku         | sku          | models.CharField    | max_length=254, default='', blank=True                        |
+| Label       | label_name         | models.CharField    | max_length=254                                                |
+| Genre       | genre        | models.CharField    | max_length=24 default=False, null=True, blank=True                                             |
+| Price       | price        | models.DecimalField | max_digits=6, decimal_places=2                                |
+| Format       | fomat_size        | models.DecimalField | max_digits=2, decimal_places=0                              |
+| Format Sizes       | has_formats    | models.BooleanField | default=False, null=True, blank=True                          |
+| Description | description  | models.TextField    |                                                               |
+| Rating      | rating       | models.DecimalField | max_digits=6, decimal_places=2, null=True, blank=True         |
+| Image       | image        | models.ImageField   | default='', blank=True                                        |
+| Image URL   | image_url    | models.URLField     | max_length=1024, default='', blank=True                       |
+
+#### Checkout app
+
+##### Order model
+
+| Name                     | Database Key    | Field Type           | Validation                                                                          |
+| ------------------------ | --------------- | -------------------- | ----------------------------------------------------------------------------------- |
+| Order Number             | order_number    | models.CharField     | max_length=32, null=False, editable=False                                           |
+| User Profile             | user_profile    | models.ForeignKey    | UserProfile, on_delete=models.SET_NULL, null=True, blank=True,related_name='orders' |
+| Full Name                | full_name       | models.CharField     | max_length=50, null=False, blank=False                                              |
+| Email                    | email           | models.EmailField    | max_length=254, null=False, blank=False                                             |
+| Phone Number             | phone_number    | models.CharField     | max_length=20, null=False, blank=False                                              |
+| Country                  | country         | CountryField         | blank_label='Select Country \*', null=False, blank=False                            |
+| Postcode                 | postcode        | models.CharField     | max_length=20, default='', blank=True                                               |
+| Town or City             | town_or_city    | models.CharField     | max_length=40, null=False, blank=False                                              |
+| Street Address 1         | street_address1 | models.CharField     | max_length=80, null=False, blank=False                                              |
+| Street Address 2         | street_address2 | models.CharField     | max_length=80, null=False, blank=False                                              |
+| County                   | county          | models.CharField     | max_length=80, default='', blank=True                                               |
+| Date                     | date            | models.DateTimeField | auto_now_add=True                                                                   |
+| Promotion Cost           | promotion_cost  | models.DecimalField  | max_digits=6, decimal_places=2, null=False, default=0                               |
+| Order Total              | order_total     | models.DecimalField  | max_digits=10, decimal_places=2, null=False, default=0                              |
+| Grand Total              | grand_total     | models.DecimalField  | max_digits=10, decimal_places=2, null=False, default=0                              |
+| Original Basket          | original_basket | models.TextField     | null=False, blank=False, default=''                                                 |
+| Stripe Payment Intent ID | stripe_pid      | models.CharField     | max_length=254, null=False, blank=False, default=''                                 |
+
+##### Order Line Item model
+
+| Name            | Database Key   | Field Type          | Validation                                                                         |
+| --------------- | -------------- | ------------------- | ---------------------------------------------------------------------------------- |
+| Order           | order          | models.ForeignKey   | Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems' |
+| Product         | product        | models.ForeignKey   | Product, null=False, blank=False, on_delete=models.CASCADE                         |
+| Product Size    | product_size   | models.CharField    | max_length=2, default='', blank=True                                               |
+| Quantity        | quantity       | models.IntegerField | null=False, blank=False, default=0                                                 |
+| Line Item Total | lineitem_total | models.DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False            |
+
+
+
 
 # Surface Plane <a name="surface-plane"></a>
+
+## Brand Image
+
+<img src="https://i.ibb.co/syF3MqP/logo3.png"><br>
+
+The brand image/logo for "Simply Records" had to be simple, easy on the eye and be relevant to the webpage. It is located at the head of the page and when engaged navigates the user back to the home section.
+
+
+
+## Colour Schemes
+The project's design is to remain consistent throughout, the aim was to implement a subtle palette that is eye-catching for the user. This was designed with the main font [Roboto](https://fonts.google.com/specimen/Roboto) a smart and professional font.
+<img src="https://i.ibb.co/z5dnqSb/Screenshot-2021-09-15-at-10-10-48.png">
+
+All colour choices were assessed within the guidelines of [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG20/). Each colour was used with [Contrast Ratio](https://contrast-ratio.com/#%23212121-on-%23F0F3F4) and graded within the guidelines of [W3](https://www.w3.org/TR/WCAG20/).
+
+## Text colours
+#### Blackish (#2D2D2B)
+predominantly all text is Black on a Whiote background which I have added to make content easy to read across all devices.
+
+<img src="https://i.ibb.co/qpcYB1n/Screenshot-2021-10-29-at-16-55-35.png"> <img src="https://i.ibb.co/6J5xFdb/Screenshot-2021-10-29-at-16-59-34.png">
+
+## Typography
+### Body
+[Roboto](https://fonts.google.com/specimen/Roboto) was my font of choice due to its clean simplistic properties which adds professionalism. 
+
+### Logo
+[Bungee](https://fonts.google.com/specimen/Bungee) was used as the logo font which has a fun and friendly feel 
+## Images
+
+### Imagery Used
+All images are taken from a record shop called phoinica [Phonica](https://www.phonicarecords.com/) which what the project insporation came from. images are stored on a web imaging service as well as the media file.
+
+### Image Placeholder
+
+If a user does not add an image URL when adding a product to the database a placeholder will take that space. The image was sourced from [Adobe Stock](https://stock.adobe.com/uk/)
+### Logo
+The logo was made from a free editor called [Free Logo Design](https://editor.freelogodesign.org/)
+### Favicon
+Favicon was made from a free editor called [Icons8](https://icons8.com/icons/set/favicon)
+
+
+## navbar
+The navbar is the main method of navigating throughout the site and is a key role in aiding in strong UX. When hovered over the desired link a 'Supple' colour change is shown. 
+
+<img src="https://i.ibb.co/9bn9sB8/Screenshot-2021-10-29-at-17-05-27.png">
+
+### Call To Action Buttons
+The point of contact needs to be appealing and interactive. for the main C2A points, I went into detail about styling which provides the user with a visual appearance. As C2A points are important in providing a good UX, I kept the consistent feel of freshness. When ideal the C2A are white text with a slate background, once initiated the colours change opposite. 
+
+<img src="https://i.ibb.co/pn9shFW/Screenshot-2021-07-20-at-18-49-33.png">
+<img src="https://i.ibb.co/CzQ66bK/Screenshot-2021-07-20-at-18-50-38.png">
 
 
 
