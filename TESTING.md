@@ -1,4 +1,4 @@
-<h1 align="center">Data Centric Development Milestone Project - Simply Scrans</h1>
+<h1 align="center">Full Stack Frameworks Milestone Project - Simply Records</h1>
 
 For full readme [click here](README.md)
 
@@ -148,6 +148,22 @@ Features below are manual testing and described below
 * Ensure when product is added to bag that the user is noted and the bag is updated
 * Ensure the correct qty is shown in bag
 
+## Add Product
+* Ensure all fields are shown
+* Ensure the form can only be validated when passed certain criteria 
+* Ensure if image is not added that placeholder is showed instead 
+* Ensure data renders corectly
+
+## Edit Product
+* Enusre all fields are shown from previous input
+* Ensure data is edited successfully 
+* Ensure image placeholder is present
+* Ensure image can be deleted
+
+## Delete 
+* Ensure user can delete product and the item be removed from DB
+* User is promted with are you sure you want to delete message
+
 ## Bag
 * Ensure when there are no items in the cart the user is pompted with a keep shopping C2A
 * Ensure when user adds product to bag they are prompted with a toast that displays there order and discount information 
@@ -170,7 +186,34 @@ Features below are manual testing and described below
     * County
     * Postcode
     * Country
+    * Payment field
+* Ensure correct total is displayed 
+* Ensure user can edit bag
+* Ensure user can complete order 
 
+## Success Page
+* Ensure Page renders and is titled "Thank You"
+* Ensure all details are correct and email confirmation is sent
+* Ensure user can continue shopping if the wanted 
+
+## News Letter
+
+* Ensure news letter is rendered at bottom of home page
+* Ensure text is clear and centered
+* Ensure only an email can be validated 
+* Ensure an email can not be entered twice
+* Ensure is prompted each of the steps in the toast section 
+
+## Toasts
+
+* Ensure toast renders below bag
+* Ensure all items added to the bag are displayed in toast 
+* Ensure user can navigate to bag through toast
+* Ensure user is prompted with a warning to spend more and apply for discount
+* Ensure user can clearly see the bag total
+* Ensure error toast is shown when error happens
+* Ensure info toast is shown when information is displayed 
+* Ensure warning toast is shown for warning 
 
 # Further Testing <a name="further-testing"></a>
 
@@ -193,6 +236,45 @@ Devices used for testing:
 
 # Browser Testing <a name="browser-testing"></a>
 
+All browser testing was done with the same method above
+
+ Problems usually occurred when my CSS was not compatible with most browsers. Running my CSS code through an Auto-Prefixer solved these compatibility issues.
+
+## Chrome/Mircrosoft Edge
+
+* All testing successful
+
+## Mozilla Firefox
+
+* All testing successful
+
+## Safari
+
+* All testing successful
+
+## Internet Explorer
+
+* My project uses ES6 which has compatibility issues with Internet Explorer. No further testing was made.
+
+
 # Validation Testing <a name="validation-testing"></a>
 
-# Bugs <a name="bugs"></a>
+# Bugs and Problems <a name="bugs"></a>
+
+### Deployment
+* I had great difficulty deploying my databse to postgres. the issue was due to adding all the data to the admin page and not directly to the json file. Issue was resolved by dumping the data to a products.json file when connected to Sqlite 3, then connecting to the Postgres database and loading the data there.
+
+Solution: Resolved
+
+### Rendering the search function for mobile screens 
+* I was unable to render the search function on mobile screens without causing layout issues. By adding a javascript to block the search bar in small screens then shows when initiated.
+
+Solution: Reolved
+
+### QTY plus and minus buttons reduced size
+
+* I had issues with posistion on smaller screens which when fixed resulted on the + - buttons reducing size, unable to target them them i re posisitoned them to be more central for a quick fix. 
+
+Solution: Unresolved
+
+For full readme [click here](README.md)
