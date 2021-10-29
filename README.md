@@ -771,18 +771,24 @@ This file will link with the settings from above ^^ and tells Django that during
 # Credits <a name="credits"></a>
 
 ## Written Content
-* I started by adding content myself under my username, all detailed information and content taken from [Phonica](https://www.phonicarecords.com/) which the website was based upon.
-* All other content will be added by the users
+* All detailed information and content taken from [Phonica](https://www.phonicarecords.com/) which the website was based upon.
 * All other content is written by me 
 
 
  
 ## Images
-* Content images come from the users and can be sourced from multiple places. For the boilerplate content I created a user and added content myself, Images came from [Phonica](https://www.phonicarecords.com/)
+* I added Images via the djagno admin. All Images came from [Phonica](https://www.phonicarecords.com/
 * Image PlaceholderImage was sourced from [Adobe Stock](https://stock.adobe.com/uk/)
 * logo was made from a free editor called [Free Logo Design](https://editor.freelogodesign.org/)
 * Favicon was made from a free editor called [Icons8](https://icons8.com/icons/set/favicon)
-* Product images are added via an image hosting service or added directly by the user .
+* Product images are added via an image hosting service or added directly by the user.
+
+
+## Code
+
+* The code throughout this project used Bootstrap to help with responsivnes and create the card templates for the products 
+* A large part of the projects back end functionality came from the code institues instructional videos [Code Institute](https://learn.codeinstitute.net/)
+* The newsletter functionality came from a project I found on git hub. I then tailerd it to my specification [Link](https://github.com/C-Undritz/Boardgame-Bazaar/blob/main/mailing_list/views.py)
 
 
 # Acknowledgements <a name="acknowledgements"></a>
