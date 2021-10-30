@@ -259,6 +259,32 @@ All browser testing was done with the same method above
 
 # Validation Testing <a name="validation-testing"></a>
 
+Validation testing was done with third party applications below:
+
+## [W3 Vailidator](https://validator.w3.org/)
+
+* HTML successfully passes W3 Validator
+
+## [Jigsaw Validator ](https://jigsaw.w3.org/css-validator/)
+* CSS successfully passes the W3 Jigsaw Validator
+<img src="https://i.ibb.co/cCw8VpC/Screenshot-2021-07-21-at-14-49-59.png">
+## [JSHint](https://jshint.com/)
+
+* JS Hint was used to flag any errors or mistakes in the javascript code and was used consistently throughout the development process.
+* No errors are present 
+* Two warnings present are due to " 'let' is available in ES6 (use 'version: 6') or Mozilla JS extensions"
+<img src="https://i.ibb.co/gzXcBVL/Screenshot-2021-10-30-at-18-42-35.png">
+
+
+## [Python](http://pep8online.com/)
+
+All code was formated with "black" a python code formatter 
+* The project's Python was validated for PEP8 compliance using Pep8,
+* These warnings have been considered, however, they appear to be incorrectly reporting `env.py` as being unused, due to how `env.py` works. Once deployed, this will not be imported anyway, and therefore this has been added to the ignore file.
+
+There are some extra errors due to line of code been to long, ive decided to leave these here as when chnaged I started to find mulitple issues with functions through out the site.
+
+
 # Bugs and Problems <a name="bugs"></a>
 
 ### Deployment
