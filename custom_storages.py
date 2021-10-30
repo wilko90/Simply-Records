@@ -6,5 +6,7 @@ class StaticStorage(S3Boto3Storage):
     location = settings.STATICFILES_LOCATION
 
 
-class MediaStorage(S3Boto3Storage):
+class MediaStorage(S3Boto3Storage): 
     location = settings.MEDIAFILES_LOCATION
+    # This is a new line that ends the file.
+
