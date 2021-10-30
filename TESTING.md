@@ -284,6 +284,11 @@ All code was formated with "black" a python code formatter
 
 There are some extra errors due to line of code been to long, ive decided to leave these here as when chnaged I started to find mulitple issues with functions through out the site.
 
+# [Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
+#### The project's Accessibility, Performance, and Best Practices audit were undertaken with Google Lighthouse. Webpages graded are below:
+
+<img src="https://i.ibb.co/tDSfBkc/Screenshot-2021-10-30-at-20-15-24.png">
 
 # Bugs and Problems <a name="bugs"></a>
 
