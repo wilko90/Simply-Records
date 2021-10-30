@@ -210,6 +210,10 @@ input[name='q']::placeholder {
 #nav-search {
     width: 75%;
 }
+.merch-equip{
+	position: relative;
+	bottom: -8px;
+}
 .delivery-banner{
 	background-color: var(--powder);
 }
@@ -511,6 +515,10 @@ input[name='q']::placeholder {
   @media (max-width: 768px) {
 	.footer-clean .item.social {
 	  text-align:center;
+	}
+	.merch-equip{
+		position: relative;
+		top: 4px;
 	}
   }
   

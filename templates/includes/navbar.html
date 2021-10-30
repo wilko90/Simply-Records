@@ -1,76 +1,77 @@
 <header class="container-fluid fixed-top">
     <div id="top-topnav" class="row top-nav">
         <div class="col-6 d-none">
-            
+
         </div>
         <!-- Login, register and account links -->
         <div class="col-lg-5 col-md-10 col-9 d-flex justify-content-start me-auto">
             <ul class="list-inline list-unstyled my-1">
                 {% if request.user.is_authenticated %}
-                    <li class="list-inline-item">
-                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_logout' %}">
-                            <!-- Responsive behaviour - visible on all screens >575px -->
-                            <div class="d-none d-sm-block">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Log out
-                            </div>
-                            <!-- Responsive behaviour - visible on all screens <575px -->
-                            <div class="d-block d-sm-none">
-                                <i class="fas fa-sign-out-alt"></i>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'profile' %}">
-                            <!-- Responsive behaviour - visible on all screens over >575px -->
-                            <div class="d-none d-sm-block">
-                                <i class="fas fa-user-alt"></i> 
-                                My Account
-                            </div>
-                            <!-- Responsive behaviour - visible on all screens over <575px -->
-                            <div class="d-block d-sm-none">
-                                <i class="fas fa-user-alt"></i> 
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'add_product' %}">
-                            <!-- Responsive behaviour - visible on all screens over >575px -->
-                            <div class="d-none d-sm-block">
-                                <i class="fas fas fa-plus"></i> 
-                                Add Product
-                            </div>
-                            <!-- Responsive behaviour - visible on all screens over <575px -->
-                            <div class="d-block d-sm-none">
-                                <i class="fas fa-plus"></i> 
-                            </div>
-                        </a>
-                    </li>
+                <li class="list-inline-item">
+                    <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_logout' %}">
+                        <!-- Responsive behaviour - visible on all screens >575px -->
+                        <div class="d-none d-sm-block">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log out
+                        </div>
+                        <!-- Responsive behaviour - visible on all screens <575px -->
+                        <div class="d-block d-sm-none">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'profile' %}">
+                        <!-- Responsive behaviour - visible on all screens over >575px -->
+                        <div class="d-none d-sm-block">
+                            <i class="fas fa-user-alt"></i>
+                            My Account
+                        </div>
+                        <!-- Responsive behaviour - visible on all screens over <575px -->
+                        <div class="d-block d-sm-none">
+                            <i class="fas fa-user-alt"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'add_product' %}">
+                        <!-- Responsive behaviour - visible on all screens over >575px -->
+                        <div class="d-none d-sm-block">
+                            <i class="fas fas fa-plus"></i>
+                            Add Product
+                        </div>
+                        <!-- Responsive behaviour - visible on all screens over <575px -->
+                        <div class="d-block d-sm-none">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </a>
+                </li>
                 {% else %}
-                    <li class="list-inline-item">
-                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_login' %}">
-                            Login
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_signup' %}">
-                            Register
-                        </a>
-                    </li>
+                <li class="list-inline-item">
+                    <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_login' %}">
+                        Login
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="top-nav-font-colour mx-1 nav-link" href="{% url 'account_signup' %}">
+                        Register
+                    </a>
+                </li>
                 {% endif %}
             </ul>
         </div>
         <!-- Shopping cart summary display -->
         <div class="col-lg-1 col-md-2 col-3d-flex justify-content-center">
-            <a class="{% if item_total %}font-weight-bold{% else %}text-black{% endif %} px-0 py-0 no-decoration" href="{% url 'view_bag' %}">
+            <a class="{% if item_total %}font-weight-bold{% else %}text-black{% endif %} px-0 py-0 no-decoration"
+                href="{% url 'view_bag' %}">
                 <ul class="list-inline new-pos list-unstyled my-1">
                     <li class="list-inline-item"><i class="fas fa-shopping-cart"></i></li>
                     <li class="list-inline-item">
                         {% if grand_total %}
-                            <span class="font-weight-bold"> £&nbsp;{{ grand_total|floatformat:2 }} </span>
-                            {% else %}
-                            £&nbsp;0.00
-                            {% endif %}
+                        <span class="font-weight-bold"> £&nbsp;{{ grand_total|floatformat:2 }} </span>
+                        {% else %}
+                        £&nbsp;0.00
+                        {% endif %}
                     </li>
                 </ul>
             </a>
@@ -81,77 +82,75 @@
         <!-- Navigation menu-->
         <div class=" col-2 col-lg-4 flex justify-content-start my-auto">
             <nav class="navbar navbar-expand-lg  navbar-dark bot-nav">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item mt-2 dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 New Releases
                             </a>
                             <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
-                                <li><a href="{% url 'products' %}?category=new_releases_funk_soul_jazz" class="dropdown-item">Funk
-                                    Soul &amp; Jazz</a></li>
-                                    <li><a href="{% url 'products' %}?category=new_releases_electronic"
-                                    class="dropdown-item ">Electronic</a></li>
-                                    <li><a href="{% url 'products' %}?category=new_releases_hip_hop" class="dropdown-item ">Hip Hop</a></li>
-                                        <li><a href="{% url 'products' %}?category=new_releases_rock_indie" class="dropdown-item">Rock &amp;
-                                    Indie</a></li>
+                                <li><a href="{% url 'products' %}?category=new_releases_funk_soul_jazz"
+                                        class="dropdown-item">Funk
+                                        Soul &amp; Jazz</a></li>
+                                <li><a href="{% url 'products' %}?category=new_releases_electronic"
+                                        class="dropdown-item ">Electronic</a></li>
+                                <li><a href="{% url 'products' %}?category=new_releases_hip_hop"
+                                        class="dropdown-item ">Hip Hop</a></li>
+                                <li><a href="{% url 'products' %}?category=new_releases_rock_indie"
+                                        class="dropdown-item">Rock &amp;
+                                        Indie</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mt-2 dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Back in Stock
                             </a>
                             <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
-                                <li></li><a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz" class="dropdown-item">Funk
+                                <li></li><a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz"
+                                    class="dropdown-item">Funk
+                                    Soul &amp; Jazz</a>
+                        </li>
+                        <li><a href="{% url 'products' %}?category=back_in_stock_electronic"
+                                class="dropdown-item ">Electronic</a></li>
+                        <li><a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Rock
+                                &amp;
+                                Indie</a></li>
+                        <li><a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Hip
+                                Hop</a></li>
+                    </ul>
+                    </li>
+                    <li class="nav-item mt-2 dropdown">
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Pre Orders
+                        </a>
+                        <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
+                            <li><a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz"
+                                    class="dropdown-item">Funk
                                     Soul &amp; Jazz</a></li>
-                                    <li><a href="{% url 'products' %}?category=back_in_stock_electronic"
+                            <li><a href="{% url 'products' %}?category=pre_orders_electronic"
                                     class="dropdown-item ">Electronic</a></li>
-                                    <li><a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Rock
+                            <li><a href="{% url 'products' %}?category=pre_orders_hip_hop" class="dropdown-item ">Hip
+                                    Hop</a></li>
+                            <li><a href="{% url 'products' %}?category=pre_orders_rock_indie" class="dropdown-item">Rock
                                     &amp;
                                     Indie</a></li>
-                                    <li><a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Hip
-                                    Hop</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mt-2 dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Pre Orders
-                            </a>
-                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
-                                <li><a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz" class="dropdown-item">Funk
-                                    Soul &amp; Jazz</a></li>
-                                    <li><a href="{% url 'products' %}?category=pre_orders_electronic"
-                                    class="dropdown-item ">Electronic</a></li>
-                                    <li><a href="{% url 'products' %}?category=pre_orders_hip_hop" class="dropdown-item ">Hip Hop</a></li>
-                                        <li><a href="{% url 'products' %}?category=pre_orders_rock_indie" class="dropdown-item">Rock &amp;
-                                    Indie</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mt-2 dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Merchandise
-                            </a>
-                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
-                                <li><a class="logo-font font-weight-bold nav-link text-black mr-5"
-                                    href="{% url 'products' %}?category=merchandise_products" id="merchandise-link">
-                                    Merchandise
-                                </a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mt-2 dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Equipment
-                            </a>
-                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
-                                <li> <a class="logo-font font-weight-bold nav-link text-black mr-5"
-                                    href="{% url 'products' %}?category=equipment_products" id="equipment-link">
-                                    Equipment
-                                </a></li>
-                            </ul>
-                        </li>
+                        </ul>
+                    </li>
+                    <li><a class="font-weight-bold merch-equip text-light nav-link mr-5"
+                            href="{% url 'products' %}?category=merchandise_products" id="merchandise-link">
+                            Merchandise
+                        </a></li>
+                    <li> <a class="  font-weight-bold merch-equip text-light nav-link mr-5"
+                            href="{% url 'products' %}?category=equipment_products" id="equipment-link">
+                            Equipment
+                        </a></li>
                     </ul>
                 </div>
             </nav>
@@ -188,8 +187,8 @@
             <div class="col d-block d-lg-none">
                 <form method="GET" action="{% url 'products' %}" class="mb-2 ms-3 w-100">
                     <div class="input-group ">
-                        <input class="form-control border btn-outline-light" type="text" name="q" placeholder="Search...">
-                    
+                        <input class="form-control border btn-outline-light" type="text" name="q"
+                            placeholder="Search...">
                     </div>
                 </form>
             </div>
