@@ -1,11 +1,9 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.contrib import messages
 
 from products.models import Product
-
-
-
-# Create your views here.
 
 
 def view_bag(request):
@@ -16,7 +14,6 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
-    
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -24,22 +21,26 @@ def add_to_bag(request, item_id):
     if 'product_format' in request.POST:
         format = request.POST['product_format']
     bag = request.session.get('bag', {})
-    
     if format:
         if item_id in list(bag.keys()):
             if format in bag[item_id]['items_by_format'].keys():
                 bag[item_id]['items_by_format'][format] += quantity
-                messages.success(request, f'Updated format {format} {product.name} quantity to {bag[item_id]["items_by_format"][format]}')
+                messages.success
+                (request, f'Updated format {format} {product.name}\
+                quantity to {bag[item_id]["items_by_format"][format]}')
             else:
                 bag[item_id]['items_by_format'][format] = quantity
-                messages.success(request, f'Added format {format} {product.name} to your bag')
+                messages.success
+                (request, f'Added format {format} {product.name} to your bag')
         else:
             bag[item_id] = {'items_by_format': {format: quantity}}
-            messages.success(request, f'Added format {format} {product.name} to your bag')
+            messages.success
+            (request, f'Added format {format} {product.name} to your bag')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success
+            (request, f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag[item_id] = quantity
             messages.success(request, f'Added {product.name} to your bag')
@@ -89,7 +90,9 @@ def remove_from_bag(request, item_id):
             del bag[item_id]['items_by_format'][format]
             if not bag[item_id]['items_by_format']:
                 bag.pop(item_id)
-            messages.success(request, f'Removed format {format.upper()} {product.name} from your bag')
+            messages.success
+            (request, f'Removed format\
+            {format.upper()} {product.name} from your bag')
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {product.name} from your bag')
