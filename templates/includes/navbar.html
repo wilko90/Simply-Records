@@ -88,11 +88,11 @@
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item mt-2 dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button"
+                            <a class="nav-link text-light dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 New Releases
                             </a>
-                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
+                            <ul class="dropdown-menu nav-drop-colour fs-5">
                                 <li><a href="{% url 'products' %}?category=new_releases_funk_soul_jazz"
                                         class="dropdown-item">Funk
                                         Soul &amp; Jazz</a></li>
@@ -106,50 +106,54 @@
                             </ul>
                         </li>
                         <li class="nav-item mt-2 dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button"
+                            <a class="nav-link text-light dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Back in Stock
                             </a>
-                            <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
-                                <li></li><a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz"
-                                    class="dropdown-item">Funk
-                                    Soul &amp; Jazz</a>
+                            <ul class="dropdown-menu nav-drop-colour fs-5">
+                                <li>><a href="{% url 'products' %}?category=back_in_stock_funk_soul_jazz"
+                                        class="dropdown-item">Funk
+                                        Soul &amp; Jazz</a>
+                                </li>
+                                <li><a href="{% url 'products' %}?category=back_in_stock_electronic"
+                                        class="dropdown-item ">Electronic</a></li>
+                                <li><a href="{% url 'products' %}?category=back_in_stock_rock_indie"
+                                        class="dropdown-item ">Rock
+                                        &amp;
+                                        Indie</a></li>
+                                <li><a href="{% url 'products' %}?category=back_in_stock_hip_hop"
+                                        class="dropdown-item">Hip
+                                        Hop</a></li>
+                            </ul>
                         </li>
-                        <li><a href="{% url 'products' %}?category=back_in_stock_electronic"
-                                class="dropdown-item ">Electronic</a></li>
-                        <li><a href="{% url 'products' %}?category=back_in_stock_rock_indie" class="dropdown-item ">Rock
-                                &amp;
-                                Indie</a></li>
-                        <li><a href="{% url 'products' %}?category=back_in_stock_hip_hop" class="dropdown-item">Hip
-                                Hop</a></li>
-                    </ul>
-                    </li>
-                    <li class="nav-item mt-2 dropdown">
-                        <a class="nav-link text-light dropdown-toggle" href="#" id="frontDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Pre Orders
-                        </a>
-                        <ul class="dropdown-menu nav-drop-colour fs-5" aria-labelledby="frontDropdown">
-                            <li><a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz"
-                                    class="dropdown-item">Funk
-                                    Soul &amp; Jazz</a></li>
-                            <li><a href="{% url 'products' %}?category=pre_orders_electronic"
-                                    class="dropdown-item ">Electronic</a></li>
-                            <li><a href="{% url 'products' %}?category=pre_orders_hip_hop" class="dropdown-item ">Hip
-                                    Hop</a></li>
-                            <li><a href="{% url 'products' %}?category=pre_orders_rock_indie" class="dropdown-item">Rock
-                                    &amp;
-                                    Indie</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="font-weight-bold merch-equip text-light nav-link mr-5"
-                            href="{% url 'products' %}?category=merchandise_products" id="merchandise-link">
-                            Merchandise
-                        </a></li>
-                    <li> <a class="  font-weight-bold equip-merch text-light nav-link mr-5"
-                            href="{% url 'products' %}?category=equipment_products" id="equipment-link">
-                            Equipment
-                        </a></li>
+                        <li class="nav-item mt-2 dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Pre Orders
+                            </a>
+                            <ul class="dropdown-menu nav-drop-colour fs-5">
+                                <li><a href="{% url 'products' %}?category=pre_orders_funk_soul_jazz"
+                                        class="dropdown-item">Funk
+                                        Soul &amp; Jazz</a></li>
+                                <li><a href="{% url 'products' %}?category=pre_orders_electronic"
+                                        class="dropdown-item ">Electronic</a></li>
+                                <li><a href="{% url 'products' %}?category=pre_orders_hip_hop"
+                                        class="dropdown-item ">Hip
+                                        Hop</a></li>
+                                <li><a href="{% url 'products' %}?category=pre_orders_rock_indie"
+                                        class="dropdown-item">Rock
+                                        &amp;
+                                        Indie</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="font-weight-bold merch-equip text-light nav-link mr-5"
+                                href="{% url 'products' %}?category=merchandise_products" id="merchandise-link">
+                                Merchandise
+                            </a></li>
+                        <li> <a class=" font-weight-bold equip-merch text-light nav-link mr-5"
+                                href="{% url 'products' %}?category=equipment_products" id="equipment-link">
+                                Equipment
+                            </a></li>
                     </ul>
                 </div>
             </nav>
