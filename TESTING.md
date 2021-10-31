@@ -311,4 +311,22 @@ Solution: Resolved
 
 Solution: Unresolved
 
+###
+
+Alignment issues on deployed version of nav bar and when on medium size view ports
+
+I have changed the posistion on on both nav links and image logo. on the development page they both render perfectly but on the deployed version the css is not been active.
+
+* Deployed site
+<img src=https://i.ibb.co/YyHFCpT/Screenshot-2021-10-31-at-11-20-32.png  >
+<img src=https://i.ibb.co/b3t88wb/Screenshot-2021-10-31-at-11-20-13.png>
+
+* Development page 
+<img src=<img src=https://i.ibb.co/YyHFCpT/Screenshot-2021-10-31-at-11-20-32.png  >
+<img src=https://i.ibb.co/b3t88wb/Screenshot-2021-10-31-at-11-20-13.png>  >
+<img src=https://i.ibb.co/QC282dg/Screenshot-2021-10-31-at-11-27-05.png>
+
+solution: Unresolved
+
+
 For full readme [click here](README.md)
