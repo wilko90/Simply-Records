@@ -216,7 +216,7 @@ input[name="q"]::placeholder {
 }
 .merch-equip {
 	position: relative;
-	bottom: -8px;
+	bottom: -8;
 }
 .equip-merch {
 	position: relative;
